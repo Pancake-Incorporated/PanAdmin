@@ -163,7 +163,7 @@ return function(Vargs, env)
 						local human = v.Character:FindFirstChildOfClass("Humanoid");
 						if human then
 							local clone = gerald:Clone()
-							clone.Name = "__ADONIS_GERALD"
+							clone.Name = "__PANADMIN_GERALD"
 							human:AddAccessory(clone)
 						end
 					end
@@ -181,7 +181,7 @@ return function(Vargs, env)
 			Function = function(plr: Player, args: {string})
 				for _, v in service.GetPlayers(plr, args[1]) do
 					if v.Character then
-						local gerald = v.Character:FindFirstChild("__ADONIS_GERALD")
+						local gerald = v.Character:FindFirstChild("__PANADMIN_GERALD")
 						if gerald then
 							gerald:Destroy()
 						end
@@ -470,7 +470,7 @@ return function(Vargs, env)
 							part.Anchored = false
 						end
 
-						local old = service.Lighting:FindFirstChild("ADONIS_ZAWARUDO")
+						local old = service.Lighting:FindFirstChild("PANADMIN_ZAWARUDO")
 						if old then
 							for i = -2, 0, 0.1 do
 								old.Saturation = i
@@ -479,7 +479,7 @@ return function(Vargs, env)
 							old:Destroy()
 						end
 
-						local audio = service.SoundService:FindFirstChild("ADONIS_CLOCK_AUDIO")
+						local audio = service.SoundService:FindFirstChild("PANADMIN_CLOCK_AUDIO")
 						if audio then
 							audio:Stop()
 							audio:Destroy()
@@ -504,7 +504,7 @@ return function(Vargs, env)
 						end)
 
 						local cc = service.New("ColorCorrectionEffect", service.Lighting)
-						cc.Name = "ADONIS_ZAWARUDO"
+						cc.Name = "PANADMIN_ZAWARUDO"
 						for i = 0,-2,-0.1 do
 							cc.Saturation = i
 							task.wait(0.01)
@@ -512,7 +512,7 @@ return function(Vargs, env)
 
 						audio:Destroy()
 						local clock = service.New("Sound", service.SoundService)
-						clock.Name = "ADONIS_CLOCK_AUDIO"
+						clock.Name = "PANADMIN_CLOCK_AUDIO"
 						clock.SoundId = "rbxassetid://160189066"
 						clock.Looped = true
 						clock.Volume = 1
@@ -1128,7 +1128,7 @@ return function(Vargs, env)
 						Functions.Hint(`{service.FormatPlayer(p)} does not have a HumanoidRootPart/Humanoid`, {plr})
 						continue
 					end
-					if char:FindFirstChild("ADONIS_UFO") then
+					if char:FindFirstChild("PANADMIN_UFO") then
 						continue
 					end
 
@@ -1162,7 +1162,7 @@ return function(Vargs, env)
 						humanoid.Name = "NoResetForYou"
 						humanoid.WalkSpeed = 0
 
-						ufo.Name = "ADONIS_UFO"
+						ufo.Name = "PANADMIN_UFO"
 						ufo.PrimaryPart = primary
 						ufo:PivotTo(tPos*CFrame.new(0, 500, 0))
 
@@ -1220,7 +1220,7 @@ return function(Vargs, env)
 							Remote.LoadCode(p,[[
 								local cam = workspace.CurrentCamera
 								local player = service.Players.LocalPlayer
-								local ufo = player.Character:FindFirstChild("ADONIS_UFO")
+								local ufo = player.Character:FindFirstChild("PANADMIN_UFO")
 								if ufo then
 									local part = ufo:FindFirstChild("Bay")
 									if part then
@@ -1440,7 +1440,7 @@ return function(Vargs, env)
 						Functions.Hint(`{service.FormatPlayer(p)} does not have a HumanoidRootPart/Humanoid`, {plr})
 						continue
 					end
-					if char:FindFirstChild("ADONIS_VAN") then
+					if char:FindFirstChild("PANADMIN_VAN") then
 						continue
 					end
 
@@ -1476,7 +1476,7 @@ return function(Vargs, env)
 						chuckle:Play()
 
 						van.PrimaryPart = van.Primary
-						van.Name = "ADONIS_VAN"
+						van.Name = "PANADMIN_VAN"
 						van.Parent = workspace
 						humanoid.Name = "NoResetForYou"
 						humanoid.WalkSpeed = 0
@@ -2062,10 +2062,10 @@ return function(Vargs, env)
 			Function = function(plr: Player, args: {string})
 				for _, v in service.GetPlayers(plr, args[1]) do
 					task.spawn(pcall, function()
-						if not v:IsA("Player") or not v or not v.Character or not v.Character:FindFirstChild("Head") or v.Character:FindFirstChild("ADONIS_BLEED") then return end
+						if not v:IsA("Player") or not v or not v.Character or not v.Character:FindFirstChild("Head") or v.Character:FindFirstChild("PANADMIN_BLEED") then return end
 						local run = true
 						local k = service.New("StringValue", v.Character)
-						k.Name = "ADONIS_BLEED"
+						k.Name = "PANADMIN_BLEED"
 						Routine(function()
 							repeat
 								task.wait(0.15)
@@ -2184,19 +2184,19 @@ return function(Vargs, env)
 			Function = function(plr: Player, args: {string})
 				for i, v in service.GetPlayers(plr, args[1]) do
 					if args[2] and args[2]:lower() == "destroy" then
-						local hats = v.Character:FindFirstChild("ADONIS_HAT_PETS")
+						local hats = v.Character:FindFirstChild("PANADMIN_HAT_PETS")
 						if hats then hats:Destroy() end
 					else
 						local num = tonumber(args[2]) or 5
 						if num>50 then num = 50 end
 						if v.Character:FindFirstChild("HumanoidRootPart") then
-							local m = v.Character:FindFirstChild("ADONIS_HAT_PETS")
+							local m = v.Character:FindFirstChild("PANADMIN_HAT_PETS")
 							local mode
 							local obj
 							local hat
 							if not m then
 								m = service.New("Model", v.Character)
-								m.Name = "ADONIS_HAT_PETS"
+								m.Name = "PANADMIN_HAT_PETS"
 								table.insert(Variables.Objects, m)
 								mode = service.New("StringValue", m)
 								mode.Name = "Mode"
@@ -2250,7 +2250,7 @@ return function(Vargs, env)
 			Fun = true;
 			AdminLevel = "Players";
 			Function = function(plr: Player, args: {string})
-				local hats = plr.Character:FindFirstChild("ADONIS_HAT_PETS")
+				local hats = plr.Character:FindFirstChild("PANADMIN_HAT_PETS")
 				if hats then
 					for i, v in service.GetPlayers(plr, args[2]) do
 						if v.Character:FindFirstChild("HumanoidRootPart") and v.Character.HumanoidRootPart:IsA("Part") then
@@ -2286,7 +2286,7 @@ return function(Vargs, env)
 				for _, v in service.GetPlayers(plr, args[1]) do
 					if v.Character and v.Character:FindFirstChild("HumanoidRootPart") then
 						for _, frc in v.Character.HumanoidRootPart:GetChildren() do
-							if frc.Name == "ADONIS_GRAVITY" then
+							if frc.Name == "PANADMIN_GRAVITY" then
 								frc:Destroy()
 							end
 						end
@@ -2306,15 +2306,15 @@ return function(Vargs, env)
 				for _, v in service.GetPlayers(plr, args[1]) do
 					if v.Character and v.Character:FindFirstChild("HumanoidRootPart") then
 						for _, frc in v.Character.HumanoidRootPart:GetChildren() do
-							if frc.Name == "ADONIS_GRAVITY" or frc.Name == "ADONIS_GRAVITY_ATTACHMENT" then
+							if frc.Name == "PANADMIN_GRAVITY" or frc.Name == "PANADMIN_GRAVITY_ATTACHMENT" then
 								frc:Destroy()
 							end
 						end
 						local attachment = service.New("Attachment", v.Character.HumanoidRootPart)
-						attachment.Name = "ADONIS_GRAVITY_ATTACHMENT"
+						attachment.Name = "PANADMIN_GRAVITY_ATTACHMENT"
 
 						local frc = service.New("VectorForce", v.Character.HumanoidRootPart)
-						frc.Name = "ADONIS_GRAVITY"
+						frc.Name = "PANADMIN_GRAVITY"
 						frc.Attachment0 = attachment
 						frc.Force = Vector3.new(0, 0, 0)
 						for _, prt in v.Character:GetChildren() do
@@ -2340,16 +2340,16 @@ return function(Vargs, env)
 				for _, v in service.GetPlayers(plr, args[1]) do
 					if v and v.Character and v.Character:FindFirstChild("HumanoidRootPart") then
 						for _, frc in v.Character.HumanoidRootPart:GetChildren() do
-							if frc.Name == "ADONIS_GRAVITY" or frc.Name == "ADONIS_GRAVITY_ATTACHMENT" then
+							if frc.Name == "PANADMIN_GRAVITY" or frc.Name == "PANADMIN_GRAVITY_ATTACHMENT" then
 								frc:Destroy()
 							end
 						end
 
 						local attachment = service.New("Attachment", v.Character.HumanoidRootPart)
-						attachment.Name = "ADONIS_GRAVITY_ATTACHMENT"
+						attachment.Name = "PANADMIN_GRAVITY_ATTACHMENT"
 
 						local frc = service.New("VectorForce", v.Character.HumanoidRootPart)
-						frc.Name = "ADONIS_GRAVITY"
+						frc.Name = "PANADMIN_GRAVITY"
 						frc.Attachment0 = attachment
 						frc.Force = Vector3.new(0, 0, 0)
 						for _, prt in v.Character:GetChildren() do
@@ -2604,9 +2604,9 @@ return function(Vargs, env)
 				local scr = Deps.Assets.Spinner:Clone()
 				scr.Name = "SPINNER"
 				local spinGryoAttachment = service.New("Attachment")
-				spinGryoAttachment.Name = "ADONIS_SPIN_GYRO_ATTACHMENT"
+				spinGryoAttachment.Name = "PANADMIN_SPIN_GYRO_ATTACHMENT"
 				local spinGryo = service.New("AlignOrientation")
-				spinGryo.Name = "ADONIS_SPIN_GYRO"
+				spinGryo.Name = "PANADMIN_SPIN_GYRO"
 				spinGryo.MaxTorque = math.huge
 				spinGryo.Responsiveness = 200
 				spinGryo.Mode = Enum.OrientationAlignmentMode.OneAttachment
@@ -2615,7 +2615,7 @@ return function(Vargs, env)
 					if v.Character and v.Character:FindFirstChild("HumanoidRootPart") then
 						local humanoidRootPart = v.Character.HumanoidRootPart
 						for _, q in humanoidRootPart:GetChildren() do
-							if q.Name == "SPINNER" or q.Name == "ADONIS_SPIN_GYRO" or q.Name == "ADONIS_SPIN_GYRO_ATTACHMENT" then
+							if q.Name == "SPINNER" or q.Name == "PANADMIN_SPIN_GYRO" or q.Name == "PANADMIN_SPIN_GYRO_ATTACHMENT" then
 								q:Destroy()
 							end
 						end
@@ -2642,7 +2642,7 @@ return function(Vargs, env)
 				for _, v in service.GetPlayers(plr, args[1]) do
 					if v.Character and v.Character:FindFirstChild("HumanoidRootPart") then
 						for _, q in v.Character.HumanoidRootPart:GetChildren() do
-							if q.Name == "SPINNER" or q.Name == "SPINNER_GYRO" or q.Name == "ADONIS_SPIN_GYRO_ATTACHMENT" then
+							if q.Name == "SPINNER" or q.Name == "SPINNER_GYRO" or q.Name == "PANADMIN_SPIN_GYRO_ATTACHMENT" then
 								q:Destroy()
 							end
 						end
@@ -2732,7 +2732,7 @@ return function(Vargs, env)
 
 				local mesh = service.New("BlockMesh")
 				mesh.Scale = Vector3.new(2, 3, 0.1)
-				mesh.Name = "ADONIS_ANIMATEAVATAR_MESH"
+				mesh.Name = "PANADMIN_ANIMATEAVATAR_MESH"
 				local decal1 = service.New("Decal")
 				decal1.Face = "Back"
 				decal1.Texture = "http://www.roblox.com/asset/?id=131396137"
@@ -2743,7 +2743,7 @@ return function(Vargs, env)
 				--local sound = service.New("Sound")
 				--sound.SoundId = "rbxassetid://137545053" Long lost audio...
 				--sound.Looped = true
-				--sound.Name = "ADONIS_ANIMATEAVATAR_SOUND"
+				--sound.Name = "PANADMIN_ANIMATEAVATAR_SOUND"
 
 				for i, v in service.GetPlayers(plr, args[1]) do
 					local character = v.Character
@@ -2800,7 +2800,7 @@ return function(Vargs, env)
 
 				local mesh = service.New("BlockMesh")
 				mesh.Scale = Vector3.new(2, 3, 0.1)
-				mesh.Name = "ADONIS_ANIMATEAVATAR_MESH"
+				mesh.Name = "PANADMIN_ANIMATEAVATAR_MESH"
 				local decal1 = service.New("Decal")
 				decal1.Face = "Back"
 				decal1.Texture = "http://www.roblox.com/asset/?id=183747890"
@@ -2811,7 +2811,7 @@ return function(Vargs, env)
 				local sound = service.New("Sound")
 				sound.SoundId = "rbxassetid://138081566"
 				sound.Looped = true
-				sound.Name = "ADONIS_ANIMATEAVATAR_SOUND"
+				sound.Name = "PANADMIN_ANIMATEAVATAR_SOUND"
 
 				for i, v in service.GetPlayers(plr, args[1]) do
 					for k, p in v.Character.HumanoidRootPart:GetChildren() do
@@ -2867,7 +2867,7 @@ return function(Vargs, env)
 
 				local mesh = service.New("BlockMesh")
 				mesh.Scale = Vector3.new(2, 3, 0.1)
-				mesh.Name = "ADONIS_ANIMATEAVATAR_MESH"
+				mesh.Name = "PANADMIN_ANIMATEAVATAR_MESH"
 				local decal1 = service.New("Decal")
 				decal1.Face = "Back"
 				decal1.Texture = "http://www.roblox.com/asset/?id=280224764"
@@ -2878,7 +2878,7 @@ return function(Vargs, env)
 				--local sound = service.New("Sound")
 				--sound.SoundId = "rbxassetid://179393562" I don't think the Rainbow Bunchie song will be coming back soon (private audios)...
 				--sound.Looped = true
-				--sound.Name = "ADONIS_ANIMATEAVATAR_SOUND"
+				--sound.Name = "PANADMIN_ANIMATEAVATAR_SOUND"
 
 				for i, v in service.GetPlayers(plr, args[1]) do
 					for k, p in v.Character.HumanoidRootPart:GetChildren() do
@@ -2934,7 +2934,7 @@ return function(Vargs, env)
 
 				local mesh = service.New("BlockMesh")
 				mesh.Scale = Vector3.new(0.1, 4.8, 20)
-				mesh.Name = "ADONIS_ANIMATEAVATAR_MESH"
+				mesh.Name = "PANADMIN_ANIMATEAVATAR_MESH"
 
 				local decal1 = service.New("Decal")
 				decal1.Face = "Left"
@@ -2948,7 +2948,7 @@ return function(Vargs, env)
 				local sound = service.New("Sound")
 				sound.SoundId = "rbxassetid://9067256917" -- Old audio 265125691 which is gone...
 				sound.Looped = true
-				sound.Name = "ADONIS_ANIMATEAVATAR_SOUND"
+				sound.Name = "PANADMIN_ANIMATEAVATAR_SOUND"
 
 				for i, v in service.GetPlayers(plr, args[1]) do
 					for k, p in v.Character.HumanoidRootPart:GetChildren() do
@@ -3005,7 +3005,7 @@ return function(Vargs, env)
 
 				local mesh = service.New("BlockMesh")
 				mesh.Scale = Vector3.new(2, 3, 0.1)
-				mesh.Name = "ADONIS_ANIMATEAVATAR_MESH"
+				mesh.Name = "PANADMIN_ANIMATEAVATAR_MESH"
 				local decal1 = service.New("Decal")
 				decal1.Face = "Back"
 				decal1.Texture = "http://www.roblox.com/asset/?id=185945467"
@@ -3018,7 +3018,7 @@ return function(Vargs, env)
 				--local sound = service.New("Sound")
 				--sound.SoundId = "rbxassetid://149690685" Was a Vine called Cat Bowser's Dance which was a real song called Parov Stelar - Catgroove, so Copyright...
 				--sound.Looped = true
-				--sound.Name = "ADONIS_ANIMATEAVATAR_SOUND"
+				--sound.Name = "PANADMIN_ANIMATEAVATAR_SOUND"
 
 				for i, v in service.GetPlayers(plr, args[1]) do
 					for k, p in v.Character.HumanoidRootPart:GetChildren() do
@@ -3075,7 +3075,7 @@ return function(Vargs, env)
 
 				local mesh = service.New("BlockMesh")
 				mesh.Scale = Vector3.new(2, 3, 0.1)
-				mesh.Name = "ADONIS_ANIMATEAVATAR_MESH"
+				mesh.Name = "PANADMIN_ANIMATEAVATAR_MESH"
 
 				local decal1 = service.New("Decal")
 				decal1.Face = "Back"
@@ -3088,7 +3088,7 @@ return function(Vargs, env)
 				local sound = service.New("Sound")
 				sound.SoundId = "rbxassetid://4792468132" -- Old audio of 259702986 was ate by the private audio update.
 				sound.Looped = true
-				sound.Name = "ADONIS_ANIMATEAVATAR_SOUND"
+				sound.Name = "PANADMIN_ANIMATEAVATAR_SOUND"
 
 				for _, v in service.GetPlayers(plr, args[1]) do
 					local humRootPart = v.Character and v.Character:FindFirstChild("HumanoidRootPart")
@@ -3145,7 +3145,7 @@ return function(Vargs, env)
 			Fun = true;
 			AdminLevel = "Moderators";
 			Function = function(plr: Player, args: {string})
-				local possibleNames = {"Shia", "Nyan1", "Nyan2", "Fr0g", "Kitty", "Snoop", "ADONIS_ANIMATEAVATAR_SOUND", "ADONIS_ANIMATEAVATAR_MESH"}
+				local possibleNames = {"Shia", "Nyan1", "Nyan2", "Fr0g", "Kitty", "Snoop", "PANADMIN_ANIMATEAVATAR_SOUND", "PANADMIN_ANIMATEAVATAR_MESH"}
 				for _, v in service.GetPlayers(plr, args[1]) do
 					local humRootPart = v.Character and v.Character:FindFirstChild("HumanoidRootPart")
 					if not humRootPart then
@@ -3198,16 +3198,16 @@ return function(Vargs, env)
 					local char = v.Character
 					for _, p in char:GetChildren() do
 						if p:IsA("BasePart") then
-							Functions.RemoveParticle(p, "ADONIS_CMD_TRAIL")
+							Functions.RemoveParticle(p, "PANADMIN_CMD_TRAIL")
 
-							local attachment0 = p:FindFirstChild("ADONIS_TRAIL_ATTACHMENT0") or service.New("Attachment", {
+							local attachment0 = p:FindFirstChild("PANADMIN_TRAIL_ATTACHMENT0") or service.New("Attachment", {
 								Parent = p;
-								Name = "ADONIS_TRAIL_ATTACHMENT0";
+								Name = "PANADMIN_TRAIL_ATTACHMENT0";
 							})
-							local attachment1 = p:FindFirstChild("ADONIS_TRAIL_ATTACHMENT1") or service.New("Attachment", {
+							local attachment1 = p:FindFirstChild("PANADMIN_TRAIL_ATTACHMENT1") or service.New("Attachment", {
 								Position = Vector3.new(0,-0.05,0);
 								Parent = p;
-								Name = "ADONIS_TRAIL_ATTACHMENT1";
+								Name = "PANADMIN_TRAIL_ATTACHMENT1";
 							})
 							Functions.NewParticle(p, "Trail", {
 								Color = colorSequence;
@@ -3216,7 +3216,7 @@ return function(Vargs, env)
 								TextureLength = 2;
 								Attachment0 = attachment0;
 								Attachment1 = attachment1;
-								Name = "ADONIS_CMD_TRAIL";
+								Name = "PANADMIN_CMD_TRAIL";
 							})
 						end
 					end
@@ -3415,7 +3415,7 @@ return function(Vargs, env)
 
 						Functions.MakeWeld(root, torso, CFrame.new(), CFrame.new())
 
-						local cape = char:FindFirstChild("ADONIS_CAPE")
+						local cape = char:FindFirstChild("PANADMIN_CAPE")
 						if cape then
 							cape.Size = cape.Size*num
 						end
@@ -4555,11 +4555,11 @@ return function(Vargs, env)
 			AdminLevel = "Moderators";
 			Function = function(plr: Player, args: {string})
 				local vel = service.New("BodyVelocity")
-				vel.Name = "ADONIS_IceVelocity"
+				vel.Name = "PANADMIN_IceVelocity"
 				vel.MaxForce = Vector3.new(5000, 0, 5000)
 				local scr = Deps.Assets.Slippery:Clone()
 
-				scr.Name = "ADONIS_IceSkates"
+				scr.Name = "PANADMIN_IceSkates"
 
 				for i, v in service.GetPlayers(plr, args[1]) do
 					if v.Character and v.Character:FindFirstChild("HumanoidRootPart") then
@@ -4585,8 +4585,8 @@ return function(Vargs, env)
 			Function = function(plr: Player, args: {string})
 				for i, v in service.GetPlayers(plr, args[1]) do
 					if v.Character and v.Character:FindFirstChild("HumanoidRootPart") then
-						local scr = v.Character.HumanoidRootPart:FindFirstChild("ADONIS_IceSkates")
-						local vel = v.Character.HumanoidRootPart:FindFirstChild("ADONIS_IceVelocity")
+						local scr = v.Character.HumanoidRootPart:FindFirstChild("PANADMIN_IceSkates")
+						local vel = v.Character.HumanoidRootPart:FindFirstChild("PANADMIN_IceVelocity")
 						if vel then vel:Destroy() end
 						if scr then scr.Disabled = true scr:Destroy() end
 					end
@@ -5040,10 +5040,10 @@ return function(Vargs, env)
 					local relativeSize = head.Size / (isR15 and Vector3.new(1.2, 1.2, 1.2) or Vector3.new(2, 1, 1))
 					local partsColor = ({head.Color:ToHSV()})[3] < 0.26 and BrickColor.new("Lily White") or BrickColor.new("Black")
 
-					local sound = head:FindFirstChild("ADONIS_SOUND") or Instance.new("Sound")
+					local sound = head:FindFirstChild("PANADMIN_SOUND") or Instance.new("Sound")
 					sound.SoundId = `rbxassetid://{id}`
 					sound.Volume = 2
-					sound.Name = "ADONIS_SOUND"
+					sound.Name = "PANADMIN_SOUND"
 					sound.Looped = true
 					sound:Play()
 
@@ -5064,7 +5064,7 @@ return function(Vargs, env)
 						head:FindFirstChildOfClass("FaceControls"):Destroy()
 					end
 
-					if not character:FindFirstChild("ADONIS_MOUTH") then
+					if not character:FindFirstChild("PANADMIN_MOUTH") then
 						local leftEye = Instance.new("Part")
 						leftEye.Anchored = false
 						leftEye.CanCollide = false
@@ -5072,7 +5072,7 @@ return function(Vargs, env)
 						leftEye.BrickColor = partsColor
 						leftEye.TopSurface = Enum.SurfaceType.Smooth
 						leftEye.BottomSurface = Enum.SurfaceType.Smooth
-						leftEye.Name = "ADONIS_LEFTEYE"
+						leftEye.Name = "PANADMIN_LEFTEYE"
 						local leftMesh = Instance.new("SpecialMesh")
 						leftMesh.Parent = leftEye
 						leftMesh.MeshType = Enum.MeshType.Sphere
@@ -5083,7 +5083,7 @@ return function(Vargs, env)
 						rightEye.Anchored = false
 						rightEye.CanCollide = false
 						rightEye.Massless = true
-						rightEye.Name = "ADONIS_RIGHTEYE"
+						rightEye.Name = "PANADMIN_RIGHTEYE"
 						rightEye.BrickColor = partsColor
 						rightEye.TopSurface = Enum.SurfaceType.Smooth
 						rightEye.BottomSurface = Enum.SurfaceType.Smooth
@@ -5097,7 +5097,7 @@ return function(Vargs, env)
 						mouth.Anchored = false
 						mouth.CanCollide = false
 						mouth.Massless = true
-						mouth.Name = "ADONIS_MOUTH"
+						mouth.Name = "PANADMIN_MOUTH"
 						mouth.BrickColor = partsColor
 						mouth.TopSurface = Enum.SurfaceType.Smooth
 						mouth.BottomSurface = Enum.SurfaceType.Smooth

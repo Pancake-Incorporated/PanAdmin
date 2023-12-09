@@ -530,7 +530,7 @@ return service.NewProxy({
 		if data and data.DebugMode == true then
 			warn("PanAdmin was loaded with DebugMode enabled; This is intended for development use only, certain debug features intended for development use will be enabled, which can weaken PanAdmin's security in a production environment.")
 			local PanAdminDebugEnabled = service.New("BoolValue")
-			PanAdminDebugEnabled.Name = "ADONIS_DEBUGMODE_ENABLED"
+			PanAdminDebugEnabled.Name = "PANADMIN_DEBUGMODE_ENABLED"
 			PanAdminDebugEnabled.Value = true
 			PanAdminDebugEnabled.Parent = Folder.Parent.Client
 		end

@@ -508,10 +508,10 @@ return function(Vargs, GetEnv)
 				local AdminLevel = Admin.GetLevel(p)
 				if Commands.Music and Admin.CheckComLevel(AdminLevel, Commands.Music) then
 					if not server.Functions.AudioLib then
-						local audioLibFolder = service.SoundService:FindFirstChild("ADONIS_AUDIOLIB")
+						local audioLibFolder = service.SoundService:FindFirstChild("PANADMIN_AUDIOLIB")
 						if not audioLibFolder then
 							audioLibFolder = service.New("Folder")
-							audioLibFolder.Name = "ADONIS_AUDIOLIB"
+							audioLibFolder.Name = "PANADMIN_AUDIOLIB"
 							audioLibFolder.Parent = service.SoundService
 						end
 						server.Functions.AudioLib = require(server.Shared.AudioLib).new(service.UnWrap(audioLibFolder))
@@ -733,7 +733,7 @@ return function(Vargs, GetEnv)
 				local retable = (retfunc and {pcall(retfunc,p,parms)}) or {}
 				if retable[1] ~= true then
 					logError(p,retable[2])
-					Remote.Send(p, "GiveReturn", key, "__ADONIS_RETURN_ERROR", retable[2])
+					Remote.Send(p, "GiveReturn", key, "__PANADMIN_RETURN_ERROR", retable[2])
 				else
 					Remote.Send(p, "GiveReturn", key, unpack(retable,2))
 				end
@@ -1179,7 +1179,7 @@ return function(Vargs, GetEnv)
 				event = nil
 
 				if returns then
-					if returns[1] == "__ADONIS_RETURN_ERROR" then
+					if returns[1] == "__PANADMIN_RETURN_ERROR" then
 						error(returns[2])
 					else
 						return unpack(returns)

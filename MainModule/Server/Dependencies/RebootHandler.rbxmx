@@ -49,7 +49,7 @@
 	end
 
 	if mode == "REBOOT" then
-		warn("ATTEMPTING TO RELOAD ADONIS");
+		warn("ATTEMPTING TO RELOAD PANADMIN");
 		CleanUp();
 		task.wait();
 
@@ -61,7 +61,7 @@
 		dTarget.Disabled = false;
 		warn("RUNNING");
 	elseif mode == "STOP" then
-		warn("ATTEMPTING TO STOP ADONIS");
+		warn("ATTEMPTING TO STOP PANADMIN");
 		CleanUp();
 	end
 

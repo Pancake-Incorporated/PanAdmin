@@ -671,7 +671,7 @@ return {
 	"";
 	"[v224.2 7.27.2021 15:52 EST]";
 	"*The client will now dump it's loading log when the localplayer is kicked";
-	"*IF YOU ARE KICKED FOR A CLIENT TIMEOUT, PLEASE VIEW THE CONSOLE AND SCREENSHOT ANY ADONIS RELATED MESSAGES!";
+	"*IF YOU ARE KICKED FOR A CLIENT TIMEOUT, PLEASE VIEW THE CONSOLE AND SCREENSHOT ANY PANADMIN RELATED MESSAGES!";
 	"*You can send them to my Discord (Sceleratis#0001); Currently investigating a client loading issue affecting specific players randomly";
 	"";
 	"[v224.1 7.26.2021 17:50 EST]";
@@ -1291,7 +1291,7 @@ return {
 	"*Changed encryption/decryption (fixed an issue with it as well)";
 	"*Minor changes and bug fixes";
 	"*Special thanks to WrathOfTheElvhen for bringing an encryption bug to my attention";
-	"!!NOTE: ALL ADONIS DATASTORE DATA WILL BE LOST DUE TO CIPHER CHANGES!!";
+	"!!NOTE: ALL PANADMIN DATASTORE DATA WILL BE LOST DUE TO CIPHER CHANGES!!";
 	"";
 	"1.2.37b [1/13/2019; 3:46PM/15:46]";
 	"*First update of the new year (!!!)";

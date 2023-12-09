@@ -405,7 +405,7 @@ return function(errorHandler, eventChecker, fenceSpecific, env)
 			end
 		end;
 		Wrapped = function(object)
-			if type(getmetatable(object)) == "table" and rawget(getmetatable(object), "__ADONIS_WRAPPED") or getmetatable(object) == "PanAdmin_Proxy" then
+			if type(getmetatable(object)) == "table" and rawget(getmetatable(object), "__PANADMIN_WRAPPED") or getmetatable(object) == "PanAdmin_Proxy" then
 				return true
 			elseif (type(object) == "table" or typeof(object) == "userdata") and object.IsProxy and object:IsProxy() then
 				return true
@@ -542,7 +542,7 @@ return function(errorHandler, eventChecker, fenceSpecific, env)
 				--	custom:RemoveFromCache()
 				--end
 				newMeta.__metatable = if main.Core and main.Core.DebugMode then nil else "PanAdmin_Proxy"
-				newMeta.__ADONIS_WRAPPED = true
+				newMeta.__PANADMIN_WRAPPED = true
 				custom:AddToCache()
 				return newObj
 			else
@@ -703,7 +703,7 @@ return function(errorHandler, eventChecker, fenceSpecific, env)
 			local newProxy = newproxy(true)
 			local metatable = getmetatable(newProxy)
 			metatable.__metatable = if main.Core and main.Core.DebugMode then nil else "PanAdmin_Proxy"
-			metatable.__ADONIS_WRAPPED = true
+			metatable.__PANADMIN_WRAPPED = true
 			for i,v in meta do metatable[i] = v end
 			return newProxy
 		end;
@@ -725,10 +725,10 @@ return function(errorHandler, eventChecker, fenceSpecific, env)
 
 		Debounce = function(key,func)
 			local env = getfenv(2)
-			local Debounces = (env and env._ADONIS_DEBOUNCES) or Debounces or {}
+			local Debounces = (env and env._PANADMIN_DEBOUNCES) or Debounces or {}
 
 			if env then
-				env._ADONIS_DEBOUNCES = (env and env._ADONIS_DEBOUNCES) or {}
+				env._PANADMIN_DEBOUNCES = (env and env._PANADMIN_DEBOUNCES) or {}
 			end
 
 			if Debounces[key] then

@@ -589,7 +589,7 @@ return function(Vargs, env)
 					if v.Character then
 						Routine(function()
 							for _, c in v.Character:GetChildren() do
-								if c:IsA("ForceField") and c.Name ~= "ADONIS_FULLGOD" then
+								if c:IsA("ForceField") and c.Name ~= "PANADMIN_FULLGOD" then
 									c:Destroy()
 								end
 							end
@@ -790,7 +790,7 @@ return function(Vargs, env)
 					if hum then
 						hum.MaxHealth = 100
 						hum.Health = hum.MaxHealth
-						local fullGodFF = v.Character:FindFirstChild("ADONIS_FULLGOD")
+						local fullGodFF = v.Character:FindFirstChild("PANADMIN_FULLGOD")
 						if fullGodFF and fullGodFF:IsA("ForceField") then
 							fullGodFF:Destroy()
 						end
@@ -816,7 +816,7 @@ return function(Vargs, env)
 						hum.Health = 9e9
 						service.New("ForceField", {
 							Parent = hum.Parent;
-							Name = "ADONIS_FULLGOD";
+							Name = "PANADMIN_FULLGOD";
 							Visible = false;
 						})
 						if Settings.CommandFeedback then
@@ -2031,7 +2031,7 @@ return function(Vargs, env)
 				local answers = args[2]
 				local anstab = {}
 				local responses = {}
-				local voteKey = `ADONISVOTE{math.random()}`;
+				local voteKey = `PANADMINVOTE{math.random()}`;
 				local players = service.GetPlayers(plr, args[1])
 				local startTime = os.clock();
 
@@ -2116,7 +2116,7 @@ return function(Vargs, env)
 				local answers = args[2]
 				local anstab = {}
 				local responses = {}
-				local voteKey = `ADONISVOTE{math.random()}`;
+				local voteKey = `PANADMINVOTE{math.random()}`;
 				local players = service.GetPlayers(plr, args[1])
 				local startTime = os.clock();
 
@@ -2586,7 +2586,7 @@ return function(Vargs, env)
 			AdminLevel = "Moderators";
 			Function = function(plr: Player, args: {string})
 				local clipper = Deps.Assets.Clipper:Clone()
-				clipper.Name = "ADONIS_NoClip"
+				clipper.Name = "PANADMIN_NoClip"
 
 				for i, p in service.GetPlayers(plr, args[1]) do
 					Admin.RunCommand(`{Settings.Prefix}clip`, p.Name)
@@ -2623,7 +2623,7 @@ return function(Vargs, env)
 			AdminLevel = "Moderators";
 			Function = function(plr: Player, args: {string})
 				for i, p in service.GetPlayers(plr, args[1]) do
-					local old = p.Character.Humanoid:FindFirstChild("ADONIS_NoClip")
+					local old = p.Character.Humanoid:FindFirstChild("PANADMIN_NoClip")
 					if old then
 						local enabled = old:FindFirstChild("Enabled")
 						if enabled then
@@ -2680,7 +2680,7 @@ return function(Vargs, env)
 						local OrigPos = cHumanoidRootPart.Position
 
 						local Model = service.New("Model", {
-							Name = `{v.Name}_ADONISJAIL`,
+							Name = `{v.Name}_PANADMINJAIL`,
 						})
 						local top = service.New("Part", {
 							Locked = true,
@@ -3859,7 +3859,7 @@ return function(Vargs, env)
 								end
 							elseif obj:IsA("Accoutrement") and obj:FindFirstChild("Handle") then
 								obj.Handle.Transparency = 0
-							elseif obj:IsA("ForceField") and obj.Name ~="ADONIS_FULLGOD" then
+							elseif obj:IsA("ForceField") and obj.Name ~="PANADMIN_FULLGOD" then
 								obj.Visible = true
 							elseif obj.Name == "Head" then
 								local face = obj:FindFirstChildOfClass("Decal")
@@ -3960,7 +3960,7 @@ return function(Vargs, env)
 				for _, v in service.GetPlayers(plr, args[1]) do
 					if v.Character and v.Character:FindFirstChild("HumanoidRootPart") then
 						Functions.NewParticle(v.Character.HumanoidRootPart, "PointLight", {
-							Name = "ADONIS_LIGHT";
+							Name = "PANADMIN_LIGHT";
 							Color = color;
 							Brightness = 5;
 							Range = 15;
@@ -3979,7 +3979,7 @@ return function(Vargs, env)
 			Function = function(plr: Player, args: {string})
 				for _, v in service.GetPlayers(plr, args[1]) do
 					if v.Character and v.Character:FindFirstChild("HumanoidRootPart") then
-						Functions.RemoveParticle(v.Character.HumanoidRootPart, "ADONIS_LIGHT")
+						Functions.RemoveParticle(v.Character.HumanoidRootPart, "PANADMIN_LIGHT")
 					end
 				end
 			end
@@ -4720,8 +4720,8 @@ return function(Vargs, env)
 							end
 							local Humanoid = v.Character:FindFirstChildOfClass("Humanoid")
 							local root = (Humanoid and Humanoid.RootPart or v.Character.PrimaryPart or v.Character:FindFirstChild("HumanoidRootPart"))
-							local FlightPos = root:FindFirstChild("ADONIS_FLIGHT_POSITION")
-							local FlightGyro = root:FindFirstChild("ADONIS_FLIGHT_GYRO")
+							local FlightPos = root:FindFirstChild("PANADMIN_FLIGHT_POSITION")
+							local FlightGyro = root:FindFirstChild("PANADMIN_FLIGHT_GYRO")
 							if Humanoid then
 								if Humanoid.SeatPart~=nil then
 									Functions.RemoveSeatWelds(Humanoid.SeatPart)
@@ -4758,8 +4758,8 @@ return function(Vargs, env)
 						end
 						local Humanoid = v.Character:FindFirstChildOfClass("Humanoid")
 						local root = v.Character:FindFirstChild('HumanoidRootPart')
-						local FlightPos = root:FindFirstChild("ADONIS_FLIGHT_POSITION")
-						local FlightGyro = root:FindFirstChild("ADONIS_FLIGHT_GYRO")
+						local FlightPos = root:FindFirstChild("PANADMIN_FLIGHT_POSITION")
+						local FlightGyro = root:FindFirstChild("PANADMIN_FLIGHT_GYRO")
 						if Humanoid then
 							if Humanoid.SeatPart~=nil then
 								Functions.RemoveSeatWelds(Humanoid.SeatPart)
@@ -4788,8 +4788,8 @@ return function(Vargs, env)
 						if n.Character:FindFirstChild("HumanoidRootPart") and target.Character:FindFirstChild("HumanoidRootPart") then
 							local Humanoid = n.Character:FindFirstChildOfClass("Humanoid")
 							local root = n.Character:FindFirstChild('HumanoidRootPart')
-							local FlightPos = root:FindFirstChild("ADONIS_FLIGHT_POSITION")
-							local FlightGyro = root:FindFirstChild("ADONIS_FLIGHT_GYRO")
+							local FlightPos = root:FindFirstChild("PANADMIN_FLIGHT_POSITION")
+							local FlightGyro = root:FindFirstChild("PANADMIN_FLIGHT_GYRO")
 
 							if workspace.StreamingEnabled == true then
 								n:RequestStreamAroundAsync((target.Character.HumanoidRootPart.CFrame*CFrame.Angles(0, math.rad(90/#players*1), 0)*CFrame.new(5+.2*#players, 0, 0))*CFrame.Angles(0, math.rad(90), 0).Position)
@@ -4831,8 +4831,8 @@ return function(Vargs, env)
 
 									local Humanoid = Character:FindFirstChildOfClass("Humanoid")
 									local root = Character:FindFirstChild('HumanoidRootPart')
-									local FlightPos = root:FindFirstChild("ADONIS_FLIGHT_POSITION")
-									local FlightGyro = root:FindFirstChild("ADONIS_FLIGHT_GYRO")
+									local FlightPos = root:FindFirstChild("PANADMIN_FLIGHT_POSITION")
+									local FlightGyro = root:FindFirstChild("PANADMIN_FLIGHT_GYRO")
 									if Humanoid then
 										if Humanoid.SeatPart ~= nil then
 											Functions.RemoveSeatWelds(Humanoid.SeatPart)
@@ -5719,7 +5719,7 @@ return function(Vargs, env)
 					Volume = volume;
 					Looped = looped;
 					Pitch = pitch;
-					Name = "ADONIS_AUDIO";
+					Name = "PANADMIN_AUDIO";
 					SoundId = `rbxassetid://{args[2]}`;
 				})
 
@@ -5753,7 +5753,7 @@ return function(Vargs, env)
 					local char = v.Character
 					local rootPart = char and char:FindFirstChild("HumanoidRootPart")
 					if rootPart then
-						local found = rootPart:FindFirstChild("ADONIS_AUDIO")
+						local found = rootPart:FindFirstChild("PANADMIN_AUDIO")
 						if found then
 							found:Stop()
 							found:Destroy()
@@ -5771,7 +5771,7 @@ return function(Vargs, env)
 			AdminLevel = "Moderators";
 			Function = function(plr: Player, args: {string}, data: {})
 				for i, v in service.SoundService:GetChildren() do
-					if v.Name=="ADONIS_SOUND" then
+					if v.Name=="PANADMIN_SOUND" then
 						if v.IsPaused == false then
 							v:Pause()
 							Functions.Hint(`Music is now paused | Run {Settings.Prefix}resume to resume playback`, {plr})
@@ -5792,7 +5792,7 @@ return function(Vargs, env)
 			AdminLevel = "Moderators";
 			Function = function(plr: Player, args: {string}, data: {})
 				for i, v in service.SoundService:GetChildren() do
-					if v.Name=="ADONIS_SOUND" then
+					if v.Name=="PANADMIN_SOUND" then
 						if v.IsPaused == true then
 							v:Resume()
 							Functions.Hint("Resuming Playback...", {plr})
@@ -5814,7 +5814,7 @@ return function(Vargs, env)
 			Function = function(plr: Player, args: {string})
 				local pitch = args[1]
 				for i, v in service.SoundService:GetChildren() do
-					if v.Name=="ADONIS_SOUND" then
+					if v.Name=="PANADMIN_SOUND" then
 						if string.sub(args[1], 1, 1) == "+" then
 							v.Pitch=v.Pitch+tonumber(string.sub(args[1], 2))
 						elseif string.sub(args[1], 1, 1) == "-" then
@@ -5838,7 +5838,7 @@ return function(Vargs, env)
 				local volume = assert(tonumber(args[1]), "Volume must be a valid number")
 
 				for i, v in service.SoundService:GetChildren() do
-					if v.Name=="ADONIS_SOUND" then
+					if v.Name=="PANADMIN_SOUND" then
 						if string.sub(args[1], 1, 1) == "+" then
 							v.Volume=v.Volume+tonumber(string.sub(args[1], 2))
 						elseif string.sub(args[1], 1, 1) == "-" then
@@ -5884,7 +5884,7 @@ return function(Vargs, env)
 					end
 
 					local s = service.New("Sound")
-					s.Name = "ADONIS_SOUND"
+					s.Name = "PANADMIN_SOUND"
 					s.Parent = service.SoundService
 					s.Looped = false
 					s.Archivable = false
@@ -5972,7 +5972,7 @@ return function(Vargs, env)
 					end
 
 					for i, v in service.SoundService:GetChildren() do
-						if v.ClassName == "Sound" and v.Name == "ADONIS_SOUND" then
+						if v.ClassName == "Sound" and v.Name == "PANADMIN_SOUND" then
 							if v.IsPaused == true then
 								local ans,event = Remote.GetGui(plr, "YesNoPrompt", {
 									Title = "Override paused track?";
@@ -5989,7 +5989,7 @@ return function(Vargs, env)
 					end
 
 					local s = service.New("Sound")
-					s.Name = "ADONIS_SOUND"
+					s.Name = "PANADMIN_SOUND"
 					s.SoundId = `http://www.roblox.com/asset/?id={id}`
 					s.Volume = volume
 					s.Pitch = pitch
@@ -6000,7 +6000,7 @@ return function(Vargs, env)
 					s:Play()
 				elseif id == "off" or id == "0" then
 					for i, v in service.SoundService:GetChildren() do
-						if v.ClassName == "Sound" and v.Name == "ADONIS_SOUND" then
+						if v.ClassName == "Sound" and v.Name == "PANADMIN_SOUND" then
 							v:Destroy()
 						end
 					end
@@ -6016,7 +6016,7 @@ return function(Vargs, env)
 			AdminLevel = "Moderators";
 			Function = function(plr: Player, args: {string})
 				for i, v in service.SoundService:GetChildren() do
-					if v.Name=="ADONIS_SOUND" then
+					if v.Name=="PANADMIN_SOUND" then
 						v:Destroy()
 					end
 				end
@@ -6060,16 +6060,16 @@ return function(Vargs, env)
 					Parent = scr;
 				})
 
-				scr.Name = "ADONIS_FLIGHT"
+				scr.Name = "PANADMIN_FLIGHT"
 
 				for i, v in service.GetPlayers(plr, args[1]) do
 					local part = v.Character:FindFirstChild("HumanoidRootPart")
 					if part then
-						local oldp = part:FindFirstChild("ADONIS_FLIGHT_POSITION")
-						local oldpa = part:FindFirstChild("ADONIS_FLIGHT_POSITION_ATTACHMENT")
-						local oldg = part:FindFirstChild("ADONIS_FLIGHT_GYRO")
-						local oldga = part:FindFirstChild("ADONIS_FLIGHT_GYRO_ATTACHMENT")
-						local olds = part:FindFirstChild("ADONIS_FLIGHT")
+						local oldp = part:FindFirstChild("PANADMIN_FLIGHT_POSITION")
+						local oldpa = part:FindFirstChild("PANADMIN_FLIGHT_POSITION_ATTACHMENT")
+						local oldg = part:FindFirstChild("PANADMIN_FLIGHT_GYRO")
+						local oldga = part:FindFirstChild("PANADMIN_FLIGHT_GYRO_ATTACHMENT")
+						local olds = part:FindFirstChild("PANADMIN_FLIGHT")
 						if oldp then oldp:Destroy() end
 						if oldpa then oldpa:Destroy() end
 						if oldg then oldg:Destroy() end
@@ -6082,20 +6082,20 @@ return function(Vargs, env)
 						local flightPosition: AlignPosition = service.New("AlignPosition")
 						local flightGyro: AlignOrientation = service.New("AlignOrientation")
 
-						flightPositionAttachment.Name = "ADONIS_FLIGHT_POSITION_ATTACHMENT"
+						flightPositionAttachment.Name = "PANADMIN_FLIGHT_POSITION_ATTACHMENT"
 						flightPositionAttachment.Parent = part
 
-						flightGyroAttachment.Name = "ADONIS_FLIGHT_GYRO_ATTACHMENT"
+						flightGyroAttachment.Name = "PANADMIN_FLIGHT_GYRO_ATTACHMENT"
 						flightGyroAttachment.Parent = part
 
-						flightPosition.Name = "ADONIS_FLIGHT_POSITION"
+						flightPosition.Name = "PANADMIN_FLIGHT_POSITION"
 						flightPosition.MaxForce = 0
 						flightPosition.Position = part.Position
 						flightPosition.Attachment0 = flightPositionAttachment
 						flightPosition.Mode = Enum.PositionAlignmentMode.OneAttachment
 						flightPosition.Parent = part
 
-						flightGyro.Name = "ADONIS_FLIGHT_GYRO"
+						flightGyro.Name = "PANADMIN_FLIGHT_GYRO"
 						flightGyro.MaxTorque = 0
 						flightGyro.CFrame = part.CFrame
 						flightGyro.Attachment0 = flightGyroAttachment
@@ -6123,7 +6123,7 @@ return function(Vargs, env)
 				for i, v in service.GetPlayers(plr, args[1]) do
 					local part = v.Character:FindFirstChild("HumanoidRootPart")
 					if part then
-						local scr = part:FindFirstChild("ADONIS_FLIGHT")
+						local scr = part:FindFirstChild("PANADMIN_FLIGHT")
 						if scr then
 							local sVal = scr:FindFirstChild("Speed")
 							if sVal then
@@ -6148,11 +6148,11 @@ return function(Vargs, env)
 				for _, v in service.GetPlayers(plr, args[1]) do
 					local part = v.Character:FindFirstChild("HumanoidRootPart")
 					if part then
-						local oldp = part:FindFirstChild("ADONIS_FLIGHT_POSITION")
-						local oldpa = part:FindFirstChild("ADONIS_FLIGHT_POSITION_ATTACHMENT")
-						local oldg = part:FindFirstChild("ADONIS_FLIGHT_GYRO")
-						local oldga = part:FindFirstChild("ADONIS_FLIGHT_GYRO_ATTACHMENT")
-						local olds = part:FindFirstChild("ADONIS_FLIGHT")
+						local oldp = part:FindFirstChild("PANADMIN_FLIGHT_POSITION")
+						local oldpa = part:FindFirstChild("PANADMIN_FLIGHT_POSITION_ATTACHMENT")
+						local oldg = part:FindFirstChild("PANADMIN_FLIGHT_GYRO")
+						local oldga = part:FindFirstChild("PANADMIN_FLIGHT_GYRO_ATTACHMENT")
+						local olds = part:FindFirstChild("PANADMIN_FLIGHT")
 						if oldp then oldp:Destroy() end
 						if oldpa then oldpa:Destroy() end
 						if oldg then oldg:Destroy() end

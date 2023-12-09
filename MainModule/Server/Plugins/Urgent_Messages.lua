@@ -70,7 +70,7 @@ return function(Vargs, GetEnv)
 		Prefix = ":";
 		Commands = { "adonisalerts", "urgentmessages", "urgentalerts", "adonismessages", "urgentadonismessages", "ulog"};
 		Args = {};
-		Description = "URGENT ADONIS RELATED MESSAGES";
+		Description = "URGENT PANADMIN RELATED MESSAGES";
 		AdminLevel = "Players";
 		Function = function(plr,args)
 			Remote.MakeGui(plr,"List",{

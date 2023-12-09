@@ -15,8 +15,8 @@ local char = player.Character
 local MoveVector = require(player:WaitForChild("PlayerScripts"):WaitForChild("PlayerModule"):WaitForChild("ControlModule"))
 
 local human = char:FindFirstChildOfClass("Humanoid")
-local bPos: AlignPosition = part:WaitForChild("ADONIS_FLIGHT_POSITION")
-local bGyro: AlignOrientation = part:WaitForChild("ADONIS_FLIGHT_GYRO")
+local bPos: AlignPosition = part:WaitForChild("PANADMIN_FLIGHT_POSITION")
+local bGyro: AlignOrientation = part:WaitForChild("PANADMIN_FLIGHT_GYRO")
 
 local speedVal = script:WaitForChild("Speed")
 local noclip = script:WaitForChild("Noclip")

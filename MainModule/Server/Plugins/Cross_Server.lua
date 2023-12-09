@@ -238,7 +238,7 @@ return function(Vargs, GetEnv)
 			local answers = args[1]
 			local anstab = {}
 			local responses = {}
-			local voteKey = `ADONISVOTE{math.random()}`
+			local voteKey = `PANADMINVOTE{math.random()}`
 			local startTime = os.clock()
 
 			local msgSub = MsgService:SubscribeAsync(voteKey, function(data)

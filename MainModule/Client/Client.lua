@@ -132,7 +132,7 @@ end
 local isStudio = game:GetService("RunService"):IsStudio()
 game:GetService("NetworkClient").ChildRemoved:Connect(function(p)
 	if not isStudio then
-		warn("~! PLAYER DISCONNECTED/KICKED! DUMPING ADONIS CLIENT LOG!")
+		warn("~! PLAYER DISCONNECTED/KICKED! DUMPING PANADMIN CLIENT LOG!")
 		dumplog()
 	end
 end)
@@ -182,7 +182,7 @@ local cPcall = function(func, ...)
 	local ran, err = pcall(coroutine.resume, coroutine.create(func), ...)
 
 	if err then
-		warn(":: ADONIS_ERROR ::", err)
+		warn(":: PANADMIN_ERROR ::", err)
 		logError(tostring(err))
 	end
 
@@ -252,7 +252,7 @@ GetEnv = function(env, repl)
 			return (locals[ind] or (env or origEnv)[ind])
 		end,
 
-		__metatable = if Folder:FindFirstChild("ADONIS_DEBUGMODE_ENABLED") then nil else unique,
+		__metatable = if Folder:FindFirstChild("PANADMIN_DEBUGMODE_ENABLED") then nil else unique,
 	})
 
 	if repl and type(repl) == "table" then
@@ -538,7 +538,7 @@ return service.NewProxy({
 		local remoteName, depsName = string.match(data.Name, "(.*)\\(.*)")
 		Folder = service.Wrap(data.Folder --[[or folder and folder:Clone()]] or Folder)
 
-		if Folder:FindFirstChild("ADONIS_DEBUGMODE_ENABLED") then
+		if Folder:FindFirstChild("PANADMIN_DEBUGMODE_ENABLED") then
 			data.DebugMode = true
 		else
 			data.DebugMode = false
@@ -643,7 +643,7 @@ return service.NewProxy({
 				Variables.LocalContainer = service.New("Folder", {
 					Parent = workspace,
           Archivable = false,
-					Name = `__ADONIS_LOCALCONTAINER_{service.HttpService:GenerateGUID(false)}`,
+					Name = `__PANADMIN_LOCALCONTAINER_{service.HttpService:GenerateGUID(false)}`,
 				})
 			end
 			return Variables.LocalContainer
@@ -797,7 +797,7 @@ return service.NewProxy({
 		log("~! Return success")
 		return "SUCCESS"
 	end,
-	__metatable = if not Folder:FindFirstChild("ADONIS_DEBUGMODE_ENABLED") then "PanAdmin" else unique,
+	__metatable = if not Folder:FindFirstChild("PANADMIN_DEBUGMODE_ENABLED") then "PanAdmin" else unique,
 	__tostring = function()
 		return "PanAdmin"
 	end,

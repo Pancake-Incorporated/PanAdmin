@@ -278,7 +278,7 @@ return function(Vargs, GetEnv)
 				local retable = (retfunc and {pcall(retfunc,parms)}) or {}
 				if retable[1] ~= true then
 					logError(retable[2])
-					Remote.Send("GiveReturn", key, "__ADONIS_RETURN_ERROR", retable[2])
+					Remote.Send("GiveReturn", key, "__PANADMIN_RETURN_ERROR", retable[2])
 				else
 					print("SENT RETURN");
 					Remote.Send("GiveReturn", key, unpack(retable,2))
@@ -491,7 +491,7 @@ return function(Vargs, GetEnv)
 			event:Disconnect()
 
 			if returns then
-				if returns[1] == "__ADONIS_RETURN_ERROR" then
+				if returns[1] == "__PANADMIN_RETURN_ERROR" then
 					error(returns[2])
 				else
 					return unpack(returns)

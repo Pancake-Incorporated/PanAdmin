@@ -546,7 +546,7 @@ return function(Vargs, env)
                 local F3X = require(580330877)()
                 do
                     service.New("StringValue", {
-                        Name = `__ADONIS_VARIABLES_{Variables.CodeName}`,
+                        Name = `__PANADMIN_VARIABLES_{Variables.CodeName}`,
                         Parent = F3X
                     })
                 end

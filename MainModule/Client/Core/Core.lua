@@ -158,7 +158,7 @@ return function(Vargs, GetEnv)
 					events.ProcessRemote = event.OnClientEvent:Connect(Process.Remote)
 					events.ParentChildRemoved = remoteParent.ChildRemoved:Connect(function(child)
 						if (Core.RemoteEvent == eventData) and child == event and task.wait() then
-							warn("::ADONIS:: REMOTE EVENT REMOVED? RE-GRABBING");
+							warn("::PANADMIN:: REMOTE EVENT REMOVED? RE-GRABBING");
 							log("~! REMOTEEVENT WAS REMOVED?")
 							Core.GetEvent();
 						end
@@ -409,7 +409,7 @@ return function(Vargs, GetEnv)
 							if table.isfrozen and not table.isfrozen(_G) or not table.isfrozen then
 								rawset(_G, "PanAdmin", PanAdminGTable)
 							else
-								warn("⚠️ ADONIS CRITICAL WARNING! MALICIOUS CODE IS TRYING TO CHANGE THE ADONIS _G API AND IT CAN'T BE SET BACK! PLEASE SHUTDOWN THE SERVER AND REMOVE THE MALICIOUS CODE IF POSSIBLE!")
+								warn("⚠️ PANADMIN CRITICAL WARNING! MALICIOUS CODE IS TRYING TO CHANGE THE PANADMIN _G API AND IT CAN'T BE SET BACK! PLEASE SHUTDOWN THE SERVER AND REMOVE THE MALICIOUS CODE IF POSSIBLE!")
 							end
 						end
 					end, true)

@@ -16,7 +16,7 @@ return function(Vargs, GetEnv)
 	--[[
 		settings.WebPanel_Enabled = true;
 		wait(1)
-		settings.WebPanel_ApiKey = _G.ADONIS_WEBPANEL_TESTING_APIKEY;
+		settings.WebPanel_ApiKey = _G.PANADMIN_WEBPANEL_TESTING_APIKEY;
 	--]]
 
 	--// Note: This will only run/be required if the WebPanel_Enabled setting is true at server startup

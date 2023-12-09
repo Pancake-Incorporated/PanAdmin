@@ -216,7 +216,7 @@ return function(Vargs, GetEnv)
 			AddLog("Script", "Starting loading of legacy chatservice handler")
 			local chatService = Functions.GetChatService(300)
 			if chatService then
-				chatService:RegisterProcessCommandsFunction("ADONIS_CMD", function(speakerName, message)
+				chatService:RegisterProcessCommandsFunction("PANADMIN_CMD", function(speakerName, message)
 					local speaker = chatService:GetSpeaker(speakerName)
 					local speakerPlayer = speaker and speaker:GetPlayer()
 
@@ -231,7 +231,7 @@ return function(Vargs, GetEnv)
 					return false
 				end)
 
-				chatService:RegisterProcessCommandsFunction("ADONIS_MUTE_SERVER", function(speakerName, _, channelName)
+				chatService:RegisterProcessCommandsFunction("PANADMIN_MUTE_SERVER", function(speakerName, _, channelName)
 					local slowCache = Admin.SlowCache
 
 					local speaker = chatService:GetSpeaker(speakerName)

@@ -1413,7 +1413,7 @@ Main.Init()
 	The main explorer interface
 ]]
 
--- ADONIS
+-- PANADMIN
 local ReplicatedStorage = game:GetService("ReplicatedStorage");
 local Dex_RemoteEvent = ReplicatedStorage:WaitForChild("NewDex_Event");
 
@@ -1696,7 +1696,7 @@ local function main()
 
 			pcall(function() renamingNode.Obj.Name = renameBox.Text end)
 			
-			-- ADONIS
+			-- PANADMIN
 			Dex_RemoteEvent:InvokeServer("SetProperty", renamingNode.Obj, "Name", renameBox.Text)
 			
 			renamingNode = nil
@@ -1934,7 +1934,7 @@ local function main()
 								pcall(function()
 									n.Obj.Parent = newPar
 									
-									-- ADONIS
+									-- PANADMIN
 									Dex_RemoteEvent:InvokeServer("SetProperty", n.Obj, "Parent", newPar)
 								end)
 							end
@@ -2327,13 +2327,13 @@ local function main()
 		context:Register("CUT",{Name = "Cut", IconMap = Explorer.MiscIcons, Icon = "Cut", DisabledIcon = "Cut_Disabled", Shortcut = "Ctrl+Z", OnClick = function()
 			local destroy,clone = game.Destroy,game.Clone
 			local sList,newClipboard = selection.List,{}
-			Dex_RemoteEvent:InvokeServer("ClearClipboard") -- ADONIS
+			Dex_RemoteEvent:InvokeServer("ClearClipboard") -- PANADMIN
 			
 			local count = 1
 			for i = 1,#sList do
 				local inst = sList[i].Obj
 				
-				-- ADONIS
+				-- PANADMIN
 				Dex_RemoteEvent:InvokeServer("Copy", inst)
 				if (inst) then -- Improvise
 					newClipboard[count] = inst
@@ -2347,7 +2347,7 @@ local function main()
 				end
 				pcall(destroy,inst)]]
 				
-				-- ADONIS
+				-- PANADMIN
 				Dex_RemoteEvent:InvokeServer("Destroy", inst)
 			end
 			clipboard = newClipboard
@@ -2357,14 +2357,14 @@ local function main()
 		context:Register("COPY",{Name = "Copy", IconMap = Explorer.MiscIcons, Icon = "Copy", DisabledIcon = "Copy_Disabled", Shortcut = "Ctrl+C", OnClick = function()
 			local clone = game.Clone
 			local sList,newClipboard = selection.List,{}
-			Dex_RemoteEvent:InvokeServer("ClearClipboard") -- ADONIS
+			Dex_RemoteEvent:InvokeServer("ClearClipboard") -- PANADMIN
 			
 			local count = 1
 			for i = 1,#sList do
 				local inst = sList[i].Obj
 				local s,cloned = pcall(clone,inst)
 				
-				-- ADONIS
+				-- PANADMIN
 				Dex_RemoteEvent:InvokeServer("Copy", inst)
 				
 				if s and cloned then
@@ -2384,7 +2384,7 @@ local function main()
 				local inst = node.Obj
 				Explorer.MakeNodeVisible(node,true)
 				
-				-- ADONIS
+				-- PANADMIN
 				local pastedObjects = Dex_RemoteEvent:InvokeServer("Paste", inst)
 				
 				-- Select the pasted objects.
@@ -2422,7 +2422,7 @@ local function main()
 				local instPar = node.Parent and node.Parent.Obj
 				Explorer.MakeNodeVisible(node)
 				
-				-- ADONIS
+				-- PANADMIN
 				local cloned = Dex_RemoteEvent:InvokeServer("Duplicate", inst, instPar)
 				
 				if (cloned) then
@@ -2450,7 +2450,7 @@ local function main()
 			for i = 1,#sList do
 				pcall(destroy,sList[i].Obj)
 				
-				-- ADONIS
+				-- PANADMIN
 				Dex_RemoteEvent:InvokeServer("Destroy", sList[i].Obj)
 			end
 			selection:Clear()
@@ -9543,7 +9543,7 @@ end]]></ProtectedString>
 	The main properties interface
 ]]
 
--- ADONIS
+-- PANADMIN
 local ReplicatedStorage = game:GetService("ReplicatedStorage");
 local Dex_RemoteEvent = ReplicatedStorage:WaitForChild("NewDex_Event");
 
@@ -11146,7 +11146,7 @@ local function main()
 						end
 						setAttribute(obj,prevAttribute.AttributeName,nil)
 						
-						-- ADONIS
+						-- PANADMIN
 						Dex_RemoteEvent:InvokeServer("SetPropertyAttribute", obj, attributeName, setVal)
 					end
 
@@ -11225,12 +11225,12 @@ local function main()
 					if prop.IsAttribute then
 						setAttribute(obj,attributeName,setVal)
 						
-						-- ADONIS
+						-- PANADMIN
 						Dex_RemoteEvent:InvokeServer("SetPropertyAttribute", obj, attributeName, setVal)
 					else
 						obj[propName] = setVal
 						
-						-- ADONIS
+						-- PANADMIN
 						Dex_RemoteEvent:InvokeServer("SetProperty", obj, propName, setVal)
 					end
 				end)
@@ -11479,7 +11479,7 @@ end]]></ProtectedString>
 	The Module to configure settings
 ]]
 
--- ADONIS
+-- PANADMIN
 local ReplicatedStorage = game:GetService("ReplicatedStorage");
 local Dex_RemoteEvent = ReplicatedStorage:WaitForChild("NewDex_Event");
 
@@ -12835,7 +12835,7 @@ return settingsInfo]]></ProtectedString>
 	The Module to configure settings
 ]]
 
--- ADONIS
+-- PANADMIN
 local ReplicatedStorage = game:GetService("ReplicatedStorage");
 local Dex_RemoteEvent = ReplicatedStorage:WaitForChild("NewDex_Event");
 

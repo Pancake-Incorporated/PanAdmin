@@ -18,8 +18,8 @@ return function(Vargs, GetEnv)
 	local teleportedPlayers = setmetatable({}, {__mode = "k"})
 	local isPrivateServer = game.PrivateServerId ~= "" and game.PrivateServerOwnerId == 0
 
-	local PARAMETER_NAME = "ADONIS_SOFTSHUTDOWN"
-	local PARAMETER_2_NAME = "ADONIS_SHUTDOWN_REJOIN"
+	local PARAMETER_NAME = "PANADMIN_SOFTSHUTDOWN"
+	local PARAMETER_2_NAME = "PANADMIN_SHUTDOWN_REJOIN"
 	local MAX_RETRIES = 4
 	local RETRY_WAIT = 1.5
 
