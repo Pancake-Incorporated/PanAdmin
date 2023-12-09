@@ -584,7 +584,7 @@ return function(Vargs, GetEnv)
 								end
 
 								Remote.Terminal.LiveOutput(p, `LUA_DEMAND_ERROR: {reason}`)
-								oError(`Adonis terminal error: {reason}`, (level or 1) + 1)
+								oError(`PanAdmin terminal error: {reason}`, (level or 1) + 1)
 							end;
 						})
 
@@ -592,7 +592,7 @@ return function(Vargs, GetEnv)
 							local ans = Remote.GetGui(p, "YesNoPrompt", {
 								Icon = server.MatIcons.Warning;
 								Question = "Are you sure you want to load this script into the server env?";
-								Title = "Adonis DebugLoadstring";
+								Title = "PanAdmin DebugLoadstring";
 								Delay = 3;
 							})
 

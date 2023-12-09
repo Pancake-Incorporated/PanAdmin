@@ -216,7 +216,7 @@ return function(Vargs, GetEnv)
 			end;
 
 			InstanceList = function(args)
-				local objects = service.GetAdonisObjects()
+				local objects = service.GetPanAdminObjects()
 				local temp = {}
 				for _, v in objects do
 					table.insert(temp, {

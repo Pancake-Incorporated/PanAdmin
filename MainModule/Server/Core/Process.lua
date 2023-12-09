@@ -287,7 +287,7 @@ return function(Vargs, GetEnv)
 		newRateLimit = newRateLimit;
 		MsgStringLimit = 500; --// Max message string length to prevent long length chat spam server crashing (chat & command bar); Anything over will be truncated;
 		MaxChatCharacterLimit = 250; --// Roblox chat character limit; The actual limit of the Roblox chat's textbox is 200 characters; I'm paranoid so I added 50 characters; Users should not be able to send a message larger than that;
-		RemoteMaxArgCount = 5; --// The maximum argument count Adonis will take from Remote (alter if your script requires more arguments)
+		RemoteMaxArgCount = 5; --// The maximum argument count PanAdmin will take from Remote (alter if your script requires more arguments)
 		RateLimits = {
 			Remote = 0.01;
 			Command = 0.1;
@@ -299,7 +299,7 @@ return function(Vargs, GetEnv)
 		Remote = function(p, cliData, com, ...)
 			if p and p:IsA("Player") then
 				if Anti.KickedPlayers[p] then
-					p:Kick(":: Adonis :: Communication following disconnect.")
+					p:Kick(":: PanAdmin :: Communication following disconnect.")
 				elseif not com or type(com) ~= "string" or #com > 50 or cliData == "BadMemes" or com == "BadMemes" then
 					Anti.Detected(p, "Kick", service.MaxLen((tostring(com) ~= "BadMemes" and tostring(com)) or tostring(select(1, ...)), 150))
 				elseif cliData and type(cliData) ~= "table" then
@@ -354,7 +354,7 @@ return function(Vargs, GetEnv)
 								end
 							elseif rateLimitCheck and RateLimit(p, "RateLog") then
 								Anti.Detected(p, "Log", string.format("Firing RemoteEvent too quickly (>Rate: %s/sec)", curRemoteRate));
-								warn(string.format("%s is firing Adonis's RemoteEvent too quickly (>Rate: %s/sec)", p.Name, curRemoteRate));
+								warn(string.format("%s is firing PanAdmin's RemoteEvent too quickly (>Rate: %s/sec)", p.Name, curRemoteRate));
 							end
 						else
 							Anti.Detected(p, "Log", "Out of Sync (r10005)")
@@ -717,7 +717,7 @@ return function(Vargs, GetEnv)
 
 				if Variables.ServerLock and level < 1 then
 					Remote.Clients[key] = nil;
-					p:Kick(Variables.LockMessage or "::Adonis::\nServer Locked")
+					p:Kick(Variables.LockMessage or "::PanAdmin::\nServer Locked")
 					return "REMOVED"
 				end
 
@@ -734,7 +734,7 @@ return function(Vargs, GetEnv)
 
 					if not listed and level == 0 then
 						Remote.Clients[key] = nil;
-						p:Kick(Variables.LockMessage or "::Adonis::\nWhitelist Enabled")
+						p:Kick(Variables.LockMessage or "::PanAdmin::\nWhitelist Enabled")
 						return "REMOVED"
 					end
 				end
@@ -745,7 +745,7 @@ return function(Vargs, GetEnv)
 						for filter,func in pairs(server.Variables.PlayerJoinFilters) do
 							local success, res, message = pcall(func, p, PlayerData)
 							if success and res == false then
-								p:Kick(`::Adonis:: {message or Settings.CustomJoinFilterKickMessage or "You are not allowed to join this experience"}`)
+								p:Kick(`::PanAdmin:: {message or Settings.CustomJoinFilterKickMessage or "You are not allowed to join this experience"}`)
 								Logs.AddLog(server.Logs.Script, `{tostring(p)} failed the join filter {filter}`)
 								break
 							elseif not success then
@@ -763,7 +763,7 @@ return function(Vargs, GetEnv)
 
 			if not ran then
 				AddLog("Errors", `{p.Name} PlayerAdded Failed: {err}`)
-				warn("~! :: Adonis :: SOMETHING FAILED DURING PLAYERADDED:")
+				warn("~! :: PanAdmin :: SOMETHING FAILED DURING PLAYERADDED:")
 				warn(tostring(err))
 			end
 
@@ -808,7 +808,7 @@ return function(Vargs, GetEnv)
 					end
 				end)
 			elseif ran and err ~= "REMOVED" then
-				Anti.RemovePlayer(p, "\n:: Adonis ::\nLoading Error [Missing player, keys, or removed]")
+				Anti.RemovePlayer(p, "\n:: PanAdmin ::\nLoading Error [Missing player, keys, or removed]")
 			end
 		end;
 
@@ -961,7 +961,7 @@ return function(Vargs, GetEnv)
 						task.wait(1)
 
 						if level > 300 and Core.DebugMode == true then
-							Functions.Notification("Debug Mode Enabled", "Adonis is currently running in Debug Mode.", {p}, 10, "MatIcon://Bug report", Core.Bytecode(`client.Remote.Send('ProcessCommand','{Settings.Prefix}debugcmds')`))
+							Functions.Notification("Debug Mode Enabled", "PanAdmin is currently running in Debug Mode.", {p}, 10, "MatIcon://Bug report", Core.Bytecode(`client.Remote.Send('ProcessCommand','{Settings.Prefix}debugcmds')`))
 						end
 
 						if level > 300 and Settings.DataStoreKey == Defaults.Settings.DataStoreKey and Core.DebugMode == false then

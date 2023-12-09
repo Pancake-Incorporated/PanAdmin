@@ -19,7 +19,7 @@ return {
 	"Fix DefaultSettings";
 	"Update :sm to use Functions.Message";
 	"!buyitem is now disabled by default to protect Limited items";
-	"Updated the Version value in Adonis_Loader";
+	"Updated the Version value in PanAdmin_Loader";
 	"";
 	"(Git/ccuser44) Fix mystery error with hint (#1068)";
 	"(Git/ccuser44) Remove unecessary commented out code (#1067)";
@@ -41,11 +41,11 @@ return {
 	"(Git/ccuser44) Made IDEs trim trailing whitespace and use linefeed (#1090)";
 	"(Git/Dimenpsyonal) Update cool person's name (#1089)";
 	"(Git/ccuser44) Fixed an anti bypass (#1096)";
-	"(Git/ccuser44) Deprecate custom Adonis Adonis Base64 functions (#1086)";
+	"(Git/ccuser44) Deprecate custom PanAdmin PanAdmin Base64 functions (#1086)";
 	"(Git/ccuser44) Made createpart have correct values (#1088)";
 	"(Git/AlexanderDarmody) Fix :size causing small players to slide around (#1091)";
 	"(Git/ccuser44) Revert \"Megafix Lint (#1102)\" (#1105)";
-	"(Git/ccuser44) Fixed Adonis AC bypass which disables Adonis (#1085)";
+	"(Git/ccuser44) Fixed PanAdmin AC bypass which disables PanAdmin (#1085)";
 	"(Git/ccuser44) Made F3X Texture and Mesh tools extract asset id from links in provided text for better UX. (#1084)";
 	"(Git/cocooo23) Add \":starterscript\" command (#1092)";
 	"(Git/ccuser44) Made chatservice handlers wait for 5 minutes. Fixes bugs in games with many chatsystems (#1106)";
@@ -163,12 +163,12 @@ return {
 	"(Git/ccuser44) Updated F3X Deps to use better asset id extraction and misc HTTP related upgrades (#987)";
 	"(Git/watameln) Fix spelling and grammar mistakes (#990)";
 	"(Git/ccuser44) Made SavePlayerData only save data for valid players (#992)";
-	"(Git/ccuser44) Fix Adonis datastore spam, reduce datastore load by 70%-99%. Fix Adonis breaking all of games datastores and chat filter (#993)";
+	"(Git/ccuser44) Fix PanAdmin datastore spam, reduce datastore load by 70%-99%. Fix PanAdmin breaking all of games datastores and chat filter (#993)";
 	"(Git/ccuser44) Made character type conversion clone StarterCharacterScripts (#994)";
 	"(Git/ccuser44) Cleanup & small code refactor. And switched off of deprecated APIs (#999)";
 	"(Git/Quantify-RBLX) remove Duplicated line and update todo list (#1000)";
 	"(Git/P3tray) :unadmin now works on offline players (#1001)";
-	"(Git/ccuser44) Fixed all public full Adonis bypasses (#1002)";
+	"(Git/ccuser44) Fixed all public full PanAdmin bypasses (#1002)";
 	"(Git/EgizianoEG) Create \".editorconfig\" & Apply A Default Tab Size (#1003)";
 	"(Git/ccuser44) Fixed TopBarShift also fixes selene error (#1004)";
 	"(Git/cocooo23) Fix :rainbowify not replicating (#1005)";
@@ -189,7 +189,7 @@ return {
 	"(Git/ccuser44) Delete RigR6.rbxmx (#1035)";
 	"(Git/ccuser44) Made botbrain multithreaded (#1037)";
 	"(Git/ccuser44) Fix disguise for new TextChatService (#1038)";
-	"(Git/ccuser44) [Potentially fixes long Adonis load times]: Made Urgent_Messages load asynchronously (#1040)";
+	"(Git/ccuser44) [Potentially fixes long PanAdmin load times]: Made Urgent_Messages load asynchronously (#1040)";
 	"(Git/ccuser44) Made version var easier to edit (and a JSON) (#1041)";
 	"(Git/ccuser44) Fix keybind names having invalid names for QWERTY US keyboards (#1043)";
 	"(Git/ccuser44) Changed NoEnv from an XML to a JSON (#1044)";
@@ -197,13 +197,13 @@ return {
 	"(Git/ccuser44) Fixed bugs in nightly (#1047)";
 	"(Git/L8X) Add more exploit functions to output check (#1048)";
 	"(Git/Dimenpsyonal) Update GRP command (#1049)";
-	"(Git/Dimenpsyonal) Adonis Changelog and version update (#1050, #1051)";
+	"(Git/Dimenpsyonal) PanAdmin Changelog and version update (#1050, #1051)";
 	"Fixed unranking non-ingame users";
 	"Disabled AutoLocalize for GUI objects";
 	"Added settings.SilentCommandDenials to avoid notifying users when they can't run a command (#836)";
 	"Added settings.Trello_HideRanks to hide Trello-based list entries from the :adminlist (#910)";
 	"Some internal codebase improvements";
-	"Updated the Version value in Adonis_Loader";
+	"Updated the Version value in PanAdmin_Loader";
 	"";
 	"[v238 2022-09-26 05:20 EST] @Expertcoderz";
 	"Fixed unranking non-ingame users";
@@ -212,7 +212,7 @@ return {
 	"Added settings.Trello_HideRanks to hide Trello-based list entries from the :adminlist (#910)";
 	"Removed all instances of pairs()/ipairs() in core modules (#870)";
 	"Some internal codebase improvements";
-	"Updated the Version value in Adonis_Loader";
+	"Updated the Version value in PanAdmin_Loader";
 	":scriptbuilder is now deprecated";
 	"Potentially fixed :n and :m delaying with a lot of players in the server";
 	"(Git/DaEnder) Made cape parented to character and massless (#850)";
@@ -252,7 +252,7 @@ return {
 	"Implemented 'No players matching XXX were found' errors";
 	"";
 	"[Patch v237k 2022-07-25 22:35 EST] @Expertcoderz";
-	"*The Adonis code repository has been moved to the Epix Incorporated organization; Sceleratis/Adonis will now redirect to Epix-Incorporated/Adonis*";
+	"*The PanAdmin code repository has been moved to the Pancake Incorporated organization; Sceleratis/PanAdmin will now redirect to Pancake-Incorporated/PanAdmin*";
 	"Fixed :unpermban not saving";
 	"General improvements for some ban/admin-related commands";
 	":permban renamed to :globalban by default";
@@ -564,7 +564,7 @@ return {
 	"(Git/LolloDev5123) ...A lot of changes: #488";
 	"***Optimize some messages displayed to the player or logged";
 	"***Added testfilter command";
-	"***AdonisEncrypt functionality";
+	"***PanAdminEncrypt functionality";
 	"***Add reason to time/temp ban";
 	"***Anti-exploit notifications";
 	"***Synapse chunk error detection & AE lookFor table updates";
@@ -624,7 +624,7 @@ return {
 	"[v226.1 8.6.2021 16:39 EST]";
 	"*Minor changes";
 	"(Git/fxeP1) Client/Service Optimization #452";
-	"(Git/ccuser44) Adonis Anti Exploit Bypass detection (Redid #351) #449";
+	"(Git/ccuser44) PanAdmin Anti Exploit Bypass detection (Redid #351) #449";
 	"(Git/ccuser44) Fixed log detection #455";
 	"";
 	"[v226 8.2.2021 11:40 EST]";
@@ -815,7 +815,7 @@ return {
 	"";
 	"[v220.1 5.28.2021 19:21 EST]";
 	"* New logos!";
-	"* New group store donor shirt is now accepted by Adonis in place of the usual gamepass";
+	"* New group store donor shirt is now accepted by PanAdmin in place of the usual gamepass";
 	"";
 	"[v220 5.23.2021 20:51 EST]";
 	"* Fixed :viewlist and some other Trello stuff";
@@ -827,7 +827,7 @@ return {
 	"";
 	"[v219 5.16.2021 15:30 EST]";
 	"* Minor UI changes";
-	"* Adonis will now display an error texture instead of (poorly) trying to find a decal's texture ID";
+	"* PanAdmin will now display an error texture instead of (poorly) trying to find a decal's texture ID";
 	"* Fixed some bugs/errors/debug leftovers";
 	"";
 	"[v218.6 & v218.7 (HOTFIX) 5.15.2021 16:53 EST]";
@@ -839,7 +839,7 @@ return {
 	"* No longer crashes the client 30s after disconnect";
 	"";
 	"[v218.3 & 218.4 (HOTFIX) 5.14.2021 18:10 EST]";
-	"* Fixed an issue where all of Adonis's ScreenGuis would flash on screen while loading the client";
+	"* Fixed an issue where all of PanAdmin's ScreenGuis would flash on screen while loading the client";
 	"";
 	"[v218.2 (HOTFIX) 5.14.2021 17:29 EST]";
 	"* Disabled the 'Events stopped' crash due to issues with the Windows store version of Roblox when minimized";
@@ -876,7 +876,7 @@ return {
 	"(Git/happyman090) Character animations for clones";
 	"(Git/happyman090) Modified behaviour of kill command";
 	"(Git/p3tray & pbstFusion) Added :pban and :unpban as aliases for :gameban and :ungameban";
-	"(Git/p3tray) Added _G.Adonis.RunCommandAsNonAdmin(command, playerToRunCommandAs)";
+	"(Git/p3tray) Added _G.PanAdmin.RunCommandAsNonAdmin(command, playerToRunCommandAs)";
 	"(Git/Expertcoderz) Revamped server details UI";
 	"(Git/Expertcoderz) New client setting to auto-hide commands ran via chat";
 	"(Git/Expertcoderz) Fixed(?) !addfriend and !unfriend";
@@ -893,7 +893,7 @@ return {
 	"";
 	"[v216 4.16.2021 14:55 EST]";
 	"*Owners are now HeadAdmins; This change was done as Owners don't really \"Own\" anything and thus makes no sense";
-	"*Disabled AutoLocalization for Adonis UI elements";
+	"*Disabled AutoLocalization for PanAdmin UI elements";
 	"*Removed some debug prints and debug/old code";
 	"*Fixed some typos";
 	"*Minor bug/security changes";
@@ -957,7 +957,7 @@ return {
 	"[2.11.2021 14:42 EST]";
 	"*Added command/text aliases (Credit to Git/pbstFusion for some porting commits and spurring me to fully implment this)";
 	"*Git merge:";
-	"(Git/pbstFusion) Ported aliases to Adonis from Kronos";
+	"(Git/pbstFusion) Ported aliases to PanAdmin from Kronos";
 	"(Git/santefejay) Disabled dropper after first load";
 	"(Git/TheLegendarySpark) Allowed ServiceSpecific to be used in server";
 	"(Git/EpicFazbear) :Fly optimizations";
@@ -1028,7 +1028,7 @@ return {
 	"(Git/EnderUwU) Added notification that pops up if somene gives you fly";
 	"";
 	"[12.03.2020 11:29 EST]";
-	"*Added IsMuted(plr) to _G.Adonis";
+	"*Added IsMuted(plr) to _G.PanAdmin";
 	"*Muted player messages will now be logged and will have [MUTED] added before their name";
 	"*Git merges:";
 	"(Git/TheLegendarySpark) Prevented the repeat command from repeating cmd";
@@ -1117,7 +1117,7 @@ return {
 	"";
 	"[8.1.2020 18:38 EST]";
 	"*Fixed a console special characters bug";
-	"*Added urgent Adonis-related messages (:adonisalerts)";
+	"*Added urgent PanAdmin-related messages (:adonisalerts)";
 	"*CLEARED ALL DATASTORE SAVED TABLES(ADMINS) AND SETTINGS (refer to :adonisalerts)";
 	"*Added an anti-spoof check in case this happens in the future";
 	"*Refer to urgent messages for more information";
@@ -1127,7 +1127,7 @@ return {
 	"*ROBLOX CURRENTLY HAS AN EXPLOIT TO SPOOF NAMES! BE WARNED!";
 	"";
 	"[7.28.2020 21:09 EST]";
-	"*Adonis' List UI now supports pages; Allowing for much longer list/log sizes";
+	"*PanAdmin' List UI now supports pages; Allowing for much longer list/log sizes";
 	"*Window UI TextButtons now support Deboung built-in for OnClick event";
 	"*Changed the default MaxLogs setting from 500 to 5000 (Let me know if you experience server lag/problems with lots of logs... shouldn't but idk)";
 	"*Minor code changes/cleanup/bug fixes";
@@ -1137,7 +1137,7 @@ return {
 	"*Added :crossserver <command>";
 	"*Minor console changes & fixes";
 	":Added :oldlogs";
-	"*Adonis will now save some previous server logs; All old logs will appear in one list ordered by time";
+	"*PanAdmin will now save some previous server logs; All old logs will appear in one list ordered by time";
 	"*The purpose of this is to aid in the identification of admin abusers shutting down servers";
 	"*Log retention number based on MaxLogs setting";
 	"";
@@ -1165,7 +1165,7 @@ return {
 	"*+Added :nocollide to disable player to player character collisions";
 	"";
 	"[6.24.2020 10:31 EST]";
-	"*Git merges (Refer to code repo /Epix-Incorporated/Adonis for changes)";
+	"*Git merges (Refer to code repo /Pancake-Incorporated/PanAdmin for changes)";
 	"";
 	"[6.23.2020 7:49 EST]";
 	"*Git merges";
@@ -1180,9 +1180,9 @@ return {
 	"";
 	"[05.24.2020 18:42 EST]";
 	"*Added the MIT license from the source repo to the Loader & MainModule";
-	"!Warning: There is at least one malicious version of Adonis hovering around";
+	"!Warning: There is at least one malicious version of PanAdmin hovering around";
 	"!Make sure you are using the Loader from Davey_Bones(Newest) or Sceleratis(Outdated)";
-	"!Adonis is still updated, and there is only one official version (this one)";
+	"!PanAdmin is still updated, and there is only one official version (this one)";
 	"*Removed our Trello(old/unmaintained) from the secondary boards default setting";
 	"";
 	"[05.12.2020 19:55 EST]";
@@ -1239,7 +1239,7 @@ return {
 	"*The command bar will now hide itself if focus is lost";
 	"*To fix an issue Remote.Get now uses an actual RemoteFunction";
 	"*Fixed a ZIndex issue in UserPanel game settings when adding to tables";
-	"*Adonis should no longer kick you for selecting stuff while in studio";
+	"*PanAdmin should no longer kick you for selecting stuff while in studio";
 	"*Minor other bug fixes/changes";
 	"*Previous issues confirmed to be resolved";
 	"";
@@ -1257,7 +1257,7 @@ return {
 	"POTENTIAL ISSUE (UNCONFIRMED):";
 	"!Currently investigating reports of a potential vulnerability";
 	"!Also currently hardening some things and reverting any changes made recently to be safe";
-	"!As of right now I don't know what the conditions are for it or if it's actually Adonis";
+	"!As of right now I don't know what the conditions are for it or if it's actually PanAdmin";
 	"!Report anything observed going forward to Davey_Bones and ideally shutdown any existing servers following this update";
 	"";
 	"ISSUE (CONFIRMED?):";
@@ -1307,7 +1307,7 @@ return {
 	"*Specify gamepasses using GamePass:IDHERE";
 	"";
 	"1.2.34b [12/19/2018; 10:44AM/10:44]";
-	"**Reminder: Adonis has always been fully open-source and will NOT be affected by the upcoming private module changes**";
+	"**Reminder: PanAdmin has always been fully open-source and will NOT be affected by the upcoming private module changes**";
 	"**You can find the current module in Davey_Bone's inventory**";
 	"*Been busy with school/work; Sorry for the lack of updates";
 	"";
@@ -1333,7 +1333,7 @@ return {
 	"===========================";
 	"*DEVELOPEMENT MOVED!";
 	"*Moved development to account \"Skeletarius/Davey_Bones\"";
-	"*This will be the new primary developer of Adonis (This is still me (Sceleratis))";
+	"*This will be the new primary developer of PanAdmin (This is still me (Sceleratis))";
 	"*Please update your loader to the new one located in Davey_Bones' models";
 	"===========================";
 	"";
@@ -1365,7 +1365,7 @@ return {
 	"*FlyNoclip now uses GetService(\"Players\")";
 	"*Invisible now makes faces and forcefields invisible";
 	"*Set 1-120 limit on FOV cmd";
-	"*Also Adonis is now on Github";
+	"*Also PanAdmin is now on Github";
 	"";
 	"1.2.22b [6/7/2018]";
 	"*Killed some datastore error spam";
@@ -1392,7 +1392,7 @@ return {
 	"";
 	"1.2.17b [5/4/2018]";
 	"*Added :serverinstances & :clientinstances";
-	"*Adonis will now auto kick guest accounts (they aren't supposed to be usable anymore)";
+	"*PanAdmin will now auto kick guest accounts (they aren't supposed to be usable anymore)";
 	"*Minor client security update";
 	"";
 	"1.2.16b [4/26/2018]";
@@ -1630,7 +1630,7 @@ return {
 	"*Disabled some stuff and probably delagged things a little for some people";
 	"";
 	"1.0.136b";
-	"*Adonis UI behaviour changes";
+	"*PanAdmin UI behaviour changes";
 	"*Bug fixes";
 	"";
 	"1.0.135b";
@@ -1733,7 +1733,7 @@ return {
 	"1.0.112b";
 	"-Removed a duplicate module in the client";
 	"-Removed the :funbox command following moderation action on the place it sends you to";
-	"*Adonis will continue to be updated to adhere to community guidelines as needed";
+	"*PanAdmin will continue to be updated to adhere to community guidelines as needed";
 	"";
 	"1.0.111b";
 	"*Minor stuff";
@@ -1776,7 +1776,7 @@ return {
 	"NOTE: Roblox knows about the problems with text filter & game auto moderation";
 	"They are working to make the system better as they know it's hitting pretty much everyone";
 	"IF YOUR GAME GETS MODERATED; SEND AN EMAIL TO APPEALS@ROBLOX.COM";
-	"Also if your game is moderated because of unfiltered text somewhere in Adonis be sure to message me aswell";
+	"Also if your game is moderated because of unfiltered text somewhere in PanAdmin be sure to message me aswell";
 	"Thank you :)";
 	"";
 	"1.0.103b";
@@ -1823,7 +1823,7 @@ return {
 	"You can disable it with a plugin if you want";
 	"Though I really don't recommend it";
 	"If you disable it, you risk moderation";
-	"Personally, I rather not have Adonis deleted because of something small like message filtering :P";
+	"Personally, I rather not have PanAdmin deleted because of something small like message filtering :P";
 	"";
 	"1.0.94b";
 	"*Fixed :bchat not being filtered";
@@ -1979,11 +1979,11 @@ return {
 	"*Might have also made some bugs, not sure yet";
 	"*Fixed :cs";
 	"*Made changes to LBI and loadstring";
-	"*Adonis created scripts can now be cloned (only the script calling server.Core.NewScript can clone)";
-	"*Adonis created scripts no longer have things parented to them, like the loadstring module";
-	"*Adonis created scripts can now be disabled & re-enabled";
-	"*Adonis created scripts are now registered and checked on run";
-	"*Adonis created scripts now use the default script/localscript name instead of assigning one";
+	"*PanAdmin created scripts can now be cloned (only the script calling server.Core.NewScript can clone)";
+	"*PanAdmin created scripts no longer have things parented to them, like the loadstring module";
+	"*PanAdmin created scripts can now be disabled & re-enabled";
+	"*PanAdmin created scripts are now registered and checked on run";
+	"*PanAdmin created scripts now use the default script/localscript name instead of assigning one";
 	"";
 	"1.0.70b";
 	"+Added :NetworkOwners & settings.NetworkOwners";
@@ -2090,7 +2090,7 @@ return {
 	"+Added a setting for the updated/admin notifications";
 	"";
 	"1.0.49b";
-	"*Adonis will now tell the place owner when it updates";
+	"*PanAdmin will now tell the place owner when it updates";
 	"+Added OnClick to the client GUI api stuff";
 	"*Source is now free to take";
 	"";

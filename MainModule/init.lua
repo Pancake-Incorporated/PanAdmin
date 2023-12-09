@@ -1,5 +1,5 @@
 -----------------------
--- Adonis MainModule --
+-- PanAdmin MainModule --
 -----------------------
 
 --[[

@@ -1,7 +1,7 @@
 client = nil
 service = nil
 
-local Components = script.Parent.Components.AdonisModernComponents
+local Components = script.Parent.Components.PanAdminModernComponents
 local Packages = Components.Parent.Packages
 
 local Maid = require(Packages.Maid)
@@ -22,7 +22,7 @@ return function(Data)
 		CurrentAppMaid = nil
 	end
 
-	-- ### REASON WHY THIS SCRIPT DISABLED: ####### Adonis does not call with an empty message arg, we cannot know when to clean up
+	-- ### REASON WHY THIS SCRIPT DISABLED: ####### PanAdmin does not call with an empty message arg, we cannot know when to clean up
 	-- -- Ensure there is a message
 	-- if typeof(Data.Message) ~= 'string' then
 	-- 	return
@@ -73,7 +73,7 @@ return function(Data)
 
 	-- ////////// Perform Animation Tasks
 
-	local Handle = Roact.mount(App, service.UnWrap(service.PlayerGui), "AdonisUI.Notif")
+	local Handle = Roact.mount(App, service.UnWrap(service.PlayerGui), "PanAdminUI.Notif")
 
 	AppMaid.RemoveHandle = function()
 		Handle = Roact.unmount(Handle)

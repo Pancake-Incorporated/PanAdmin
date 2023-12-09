@@ -1,10 +1,10 @@
 <div align="center">
 
-# 📜 Adonis Contribution Guidelines
+# 📜 PanAdmin Contribution Guidelines
 
-![Logo of Epix Incorporated](https://user-images.githubusercontent.com/81153405/175760639-fc3b2352-8066-48cc-b2e6-2ea0ad69e33e.png)
+![Logo of Pancake Incorporated](https://user-images.githubusercontent.com/81153405/175760639-fc3b2352-8066-48cc-b2e6-2ea0ad69e33e.png)
 
-Adonis is an ever-expanding, frequently updated, slightly complicated, system. To keep Adonis functional and somewhat readable rather than a tangled mess, here are some guidelines in the form of an FAQ to consider before submitting a pull request:
+PanAdmin is an ever-expanding, frequently updated, slightly complicated, system. To keep PanAdmin functional and somewhat readable rather than a tangled mess, here are some guidelines in the form of an FAQ to consider before submitting a pull request:
 
 ## Q: Who's in charge of handling pull requests (PRs)?
 
@@ -20,21 +20,21 @@ Maintainers may manage PR labels or edit PR titles and descriptions where benefi
 
 A short explanation/clarification may be appended to the title, and should be included if the PR involves making a change with a rationale that users may not understand: "Add confirmation prompt for :somecommand to prevent XXX"
 
-Note that Adonis commands are _always_ referenced by their prefix and common usage name (":somecommand"/":somecmd"), and not anything else including their internal index ("SomeCommand"). This is to ensure consistency and easy comprehension by normal Adonis users.
+Note that PanAdmin commands are _always_ referenced by their prefix and common usage name (":somecommand"/":somecmd"), and not anything else including their internal index ("SomeCommand"). This is to ensure consistency and easy comprehension by normal PanAdmin users.
 
 **Description:** The description of a PR should be comprehensive and either describe, or list and describe the specific additions, changes, and/or removals made by the PR, and their full rationale.
   
 ℹ️ **The above rules do not apply to individual commit names and descriptions.**
 
-You may optionally include relevant [label(s)](https://github.com/Epix-Incorporated/Adonis/labels) in your PR to classify it. (Maintainers will add the labels otherwise after reviewing your PR.)
+You may optionally include relevant [label(s)](https://github.com/Pancake-Incorporated/PanAdmin/labels) in your PR to classify it. (Maintainers will add the labels otherwise after reviewing your PR.)
 
 ## Q: What can I contribute?
 
-**A:** Anything within reason! Contributions can be to Adonis itself or the wiki (or both!) As long as your addition or change is useful and doesn't break something, and makes sense (while not violating Roblox's rules) it will *probably* be merged. However, something may occasionally be deemed unnecessary or incomplete, at which point a comment will be made on the PR for you to respond to or amend your code (or just so you know the maintainers' reasoning.)
+**A:** Anything within reason! Contributions can be to PanAdmin itself or the wiki (or both!) As long as your addition or change is useful and doesn't break something, and makes sense (while not violating Roblox's rules) it will *probably* be merged. However, something may occasionally be deemed unnecessary or incomplete, at which point a comment will be made on the PR for you to respond to or amend your code (or just so you know the maintainers' reasoning.)
 
 ## Q: What *can't* I contribute?
 
-**A:** Anything that violates Roblox's rules (as in, anything that could get Adonis or games using Adonis in trouble) is not allowed for obvious reasons. Additionally, please do not submit any form of obfuscated code as they have no place in the open-source project that Adonis is.
+**A:** Anything that violates Roblox's rules (as in, anything that could get PanAdmin or games using PanAdmin in trouble) is not allowed for obvious reasons. Additionally, please do not submit any form of obfuscated code as they have no place in the open-source project that PanAdmin is.
 
 There is a very clear/obvious difference between unavoidably complex code and intentionally complicated code. Maintainers are certain to check all file changes before merging and can *usually* spot something abnormal quickly.
 
@@ -52,7 +52,7 @@ Finally, ***be sure to make file changes based on the latest version of the ``ma
 
 ## Q: How can I sync the Rojo project with Roblox Studio?
 
-**A:** Please check for [Rojo Documentation for full details](https://rojo.space/docs/v7/getting-started/installation/), but in short, you'll need to install the Rojo CLI if you don't already have it. If you don't have the Aftman toolchain manager, [install it](https://github.com/LPGhatguy/aftman#installation). Then, inside the Adonis folder, run `aftman install`. Finally, run `rojo plugin install` to add the plugin to your studio.
+**A:** Please check for [Rojo Documentation for full details](https://rojo.space/docs/v7/getting-started/installation/), but in short, you'll need to install the Rojo CLI if you don't already have it. If you don't have the Aftman toolchain manager, [install it](https://github.com/LPGhatguy/aftman#installation). Then, inside the PanAdmin folder, run `aftman install`. Finally, run `rojo plugin install` to add the plugin to your studio.
 
 **Please note, that if you have installed a plugin from the Roblox Plugin Marketplace created by LPGhatguy, it will not work correctly and has been deprecated, DO NOT use this plugin, it WILL cause side effects, such as UI font size issues.**
 Alternatively, if you prefer, you may also download the plugin from the [Creator Marketplace](https://create.roblox.com/marketplace/asset/13916111004/Rojo), but do note your version may get out of sync without warning.
@@ -61,17 +61,17 @@ After installing Rojo, you can serve it by running `rojo serve` or by using the 
 
 ## Q: What can I contribute to the Wiki?
 
-**A:** Wiki contributions should focus on technical information, such as what various functions and variables do/are for and how to use them correctly when developing plugins for Adonis. Information about Adonis and useful tutorials for new or inexperienced users is also acceptable (and much welcomed.)
+**A:** Wiki contributions should focus on technical information, such as what various functions and variables do/are for and how to use them correctly when developing plugins for PanAdmin. Information about PanAdmin and useful tutorials for new or inexperienced users is also acceptable (and much welcomed.)
 
 ## Q: My contribution was accepted. Now what?
 
 **A:** After handling the merge, a maintainer will also add you to the credits list as "@GitHub YourGitHubUsernameHere" if it's your first contribution. If we forget to do this, and you notice, just us me know (via Discord or comment on the PR itself) and we'll fix it.
 
-Once in a while after changes are merged, some quick testing will be done by a maintainer to make sure everything works correctly. Once that's done, the updated models will be published to Roblox by an automated process, after which all new servers will be running the latest version of Adonis.
+Once in a while after changes are merged, some quick testing will be done by a maintainer to make sure everything works correctly. Once that's done, the updated models will be published to Roblox by an automated process, after which all new servers will be running the latest version of PanAdmin.
 
 ## Q: How do I get the "GitHub Contributor" role and group rank?
 
-**A:** After your contribution is accepted, post your Discord & Roblox usernames into the discussion thread (<https://github.com/Epix-Incorporated/Adonis/discussions/433>). You will be given the "GitHub Contributor" role in the Discord server and the "Contributors" rank in the Roblox group (Epix Incorporated) by a maintainer, assuming you are a member of the server and group respectively.
+**A:** After your contribution is accepted, post your Discord & Roblox usernames into the discussion thread (<https://github.com/Pancake-Incorporated/PanAdmin/discussions/433>). You will be given the "GitHub Contributor" role in the Discord server and the "Contributors" rank in the Roblox group (Pancake Incorporated) by a maintainer, assuming you are a member of the server and group respectively.
 
 Roblox group: <https://www.roblox.com/groups/886423>
 
@@ -83,6 +83,6 @@ Discord server: <https://discord.com/invite/H5RvTP3>
 
 Feel free to make inquiries on our Discord server.
   
-<sub>Adonis Contribution Guide 2022</sub>
+<sub>PanAdmin Contribution Guide 2022</sub>
 
 </div>

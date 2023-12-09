@@ -1,11 +1,11 @@
 {
-    "name": "Adonis_Rojo",
+    "name": "PanAdmin_Rojo",
     "tree": {
         "$className": "Folder",
         "MainModule": {
             "$path": "../MainModule"
         },
-        "Adonis_Loader": {
+        "PanAdmin_Loader": {
             "$className": "Model",
             "$path": "../Loader"
         }

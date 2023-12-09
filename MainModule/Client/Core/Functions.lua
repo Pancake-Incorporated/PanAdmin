@@ -894,7 +894,7 @@ return function(Vargs, GetEnv)
 		end;
 
 		ClearAllInstances = function()
-			local objects = service.GetAdonisObjects()
+			local objects = service.GetPanAdminObjects()
 			for i in objects do
 				i:Destroy()
 			end
@@ -945,7 +945,7 @@ return function(Vargs, GetEnv)
 			service.StarterGui:SetCore("ChatMakeSystemMessage",tab)
 
 			if Functions.SendToChat then
-				Functions.SendToChat({Name = "::Adonis::"},msg,"Private")
+				Functions.SendToChat({Name = "::PanAdmin::"},msg,"Private")
 			end
 		end;
 
@@ -1274,7 +1274,7 @@ return function(Vargs, GetEnv)
 		end;
 
 		UnCape = function()
-			local cape = service.LocalContainer():FindFirstChild("::Adonis::Cape")
+			local cape = service.LocalContainer():FindFirstChild("::PanAdmin::Cape")
 			if cape then cape:Destroy() end
 		end;
 
@@ -1282,7 +1282,7 @@ return function(Vargs, GetEnv)
 			local torso = service.Player.Character:FindFirstChild("HumanoidRootPart")
 			if torso then
 				local p = service.New("Part",service.LocalContainer())
-				p.Name = "::Adonis::Cape"
+				p.Name = "::PanAdmin::Cape"
 				p.Anchored = true
 				p.Transparency=0.1
 				p.Material=material

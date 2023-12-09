@@ -333,7 +333,7 @@ return function(Vargs, GetEnv)
 			acli.Disabled = false;
 
 			folder.Archivable = false;
-			folder.Name = depsName; --"Adonis_Client"
+			folder.Name = depsName; --"PanAdmin_Client"
 			folder.Parent = parentObj;
 
 			if not parent then
@@ -439,7 +439,7 @@ return function(Vargs, GetEnv)
 				acli.Parent = folder;
 				acli.Disabled = false;
 
-				folder.Name = "Adonis_Client"
+				folder.Name = "PanAdmin_Client"
 				folder.Parent = container;
 
 				--// Event only fires AFTER the client is alive and well
@@ -589,7 +589,7 @@ return function(Vargs, GetEnv)
 
 			local execCode = service.HttpService:GenerateGUID(false)
 
-			scr.Name = `[Adonis] {scriptType}`
+			scr.Name = `[PanAdmin] {scriptType}`
 
 			if allowCodes then
 				service.New("StringValue", {
@@ -739,7 +739,7 @@ return function(Vargs, GetEnv)
 		GetDataStore = function()
 			local ran,store = pcall(function()
 
-				return service.DataStoreService:GetDataStore(string.sub(Settings.DataStore, 1, 50),"Adonis")
+				return service.DataStoreService:GetDataStore(string.sub(Settings.DataStore, 1, 50),"PanAdmin")
 			end)
 
 			-- DataStore studio check.
@@ -1175,7 +1175,7 @@ return function(Vargs, GetEnv)
 							and Settings.LoadAdminsFromDS
 						then
 							warn(
-								'Admins are loading from the Adonis DataStore when Settings.SaveAdmins is FALSE!\nDisable this warning by adding the setting "SaveAdminsWarning" in Settings (and set it to true!) or set Settings.LoadAdminsFromDS to false'
+								'Admins are loading from the PanAdmin DataStore when Settings.SaveAdmins is FALSE!\nDisable this warning by adding the setting "SaveAdminsWarning" in Settings (and set it to true!) or set Settings.LoadAdminsFromDS to false'
 							)
 							Core.WarnedAboutAdminsLoadingWhenSaveAdminsIsOff = true
 						end
@@ -1390,7 +1390,7 @@ return function(Vargs, GetEnv)
 									elseif API_Special[inde] == false then
 										AddLog(Logs.Script, {
 											Text = `Access to {inde} was denied`;
-											Desc = `A server script attempted to access {inde} via _G.Adonis.Access`;
+											Desc = `A server script attempted to access {inde} via _G.PanAdmin.Access`;
 										})
 
 										error(`Access Denied: {inde}`)
@@ -1492,7 +1492,7 @@ return function(Vargs, GetEnv)
 
 				API.Debug = service.ReadOnly(DebugAPI) -- Allows fetching of the Debug API from within the _G API
 
-				if not service.ReplicatedStorage:FindFirstChild("Adonis_Debug_API") then -- Allows fetching from outside of _G Env (such as the command bar)
+				if not service.ReplicatedStorage:FindFirstChild("PanAdmin_Debug_API") then -- Allows fetching from outside of _G Env (such as the command bar)
 					local pointers = {}
 
 					local function getRealEnvResult(PointerOrPath)
@@ -1508,10 +1508,10 @@ return function(Vargs, GetEnv)
 						end
 					end	
 					
-					local AdonisDebugAPIBindable = service.New("BindableFunction")
-					AdonisDebugAPIBindable.Name = "Adonis_Debug_API"
-					AdonisDebugAPIBindable.Parent = service.ReplicatedStorage
-					AdonisDebugAPIBindable.OnInvoke = function(DebugCommand,...)
+					local PanAdminDebugAPIBindable = service.New("BindableFunction")
+					PanAdminDebugAPIBindable.Name = "PanAdmin_Debug_API"
+					PanAdminDebugAPIBindable.Parent = service.ReplicatedStorage
+					PanAdminDebugAPIBindable.OnInvoke = function(DebugCommand,...)
 						local args = {...}
 
 						if DebugCommand == "RunEnvFunc" then
@@ -1546,11 +1546,11 @@ return function(Vargs, GetEnv)
 
 				AddLog(Logs.Script, {
 					Text = "Enabled Debug API";
-					Desc = "DebugMode is enabled on this Adonis instance, the debug API is now accessible thru the bindable and _G (if enabled).";
+					Desc = "DebugMode is enabled on this PanAdmin instance, the debug API is now accessible thru the bindable and _G (if enabled).";
 				})
 			end
 
-			local AdonisGTable = service.NewProxy({
+			local PanAdminGTable = service.NewProxy({
 				__index = function(tab,ind)
 					if Settings.G_API then
 						return API[ind]
@@ -1566,27 +1566,27 @@ return function(Vargs, GetEnv)
 				__metatable = true;
 			})
 
-			if not rawget(_G, "Adonis") then
+			if not rawget(_G, "PanAdmin") then
 				if table.isfrozen and not table.isfrozen(_G) or not table.isfrozen then
-					rawset(_G, "Adonis", AdonisGTable)
+					rawset(_G, "PanAdmin", PanAdminGTable)
 					StartLoop("APICheck", 1, function()
-						if rawget(_G, "Adonis") ~= AdonisGTable then
+						if rawget(_G, "PanAdmin") ~= PanAdminGTable then
 							if table.isfrozen and not table.isfrozen(_G) or not table.isfrozen then
-								rawset(_G, "Adonis", AdonisGTable)
+								rawset(_G, "PanAdmin", PanAdminGTable)
 							else
 								warn("⚠️ ADONIS CRITICAL WARNING! MALICIOUS CODE IS TRYING TO CHANGE THE ADONIS _G API AND IT CAN'T BE SET BACK! PLEASE SHUTDOWN THE SERVER AND REMOVE THE MALICIOUS CODE IF POSSIBLE!")
 							end
 						end
 					end, true)
 				else
-					warn("The _G table was locked and the Adonis _G API could not be loaded")
+					warn("The _G table was locked and the PanAdmin _G API could not be loaded")
 				end
 			end
 
 
 			AddLog(Logs.Script, {
 				Text = "Started _G API";
-				Desc = "The Adonis _G API was initialized and is ready to use";
+				Desc = "The PanAdmin _G API was initialized and is ready to use";
 			})
 		end;
 	};

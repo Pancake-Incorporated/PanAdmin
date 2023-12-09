@@ -61,15 +61,15 @@ return function(Vargs, GetEnv)
 									return false
 								elseif Admin.IsMuted(SenderPlayer) then -- // Mute handler
 									if IsOriginalSender then
-										server.Remote.Send(SenderPlayer, "Function", "DisplaySystemMessageInTextChat", nil, `<font color="rgb(130, 100, 130)">[Adonis Chat]: </font><b>You are muted!</b> Other players cannot see your messages.`)
+										server.Remote.Send(SenderPlayer, "Function", "DisplaySystemMessageInTextChat", nil, `<font color="rgb(130, 100, 130)">[PanAdmin Chat]: </font><b>You are muted!</b> Other players cannot see your messages.`)
 									end 
 									
 									return false
 								elseif Admin.SlowMode and not Admin.CheckAdmin(SenderPlayer) and slowCache[SenderPlayer] and os.time() - slowCache[SenderPlayer] < Admin.SlowMode then
 									if IsOriginalSender then --// Only show this for the person sending! Hide for others, however
-										--Functions.Notification("You are chatting too fast!", string.format("[Adonis] :: Slow mode enabled! (%g second(s) remaining)", Admin.SlowMode - (os.time() - slowCache[SenderPlayer])), {SenderPlayer}, 10)
+										--Functions.Notification("You are chatting too fast!", string.format("[PanAdmin] :: Slow mode enabled! (%g second(s) remaining)", Admin.SlowMode - (os.time() - slowCache[SenderPlayer])), {SenderPlayer}, 10)
 										
-										server.Remote.Send(SenderPlayer, "Function", "DisplaySystemMessageInTextChat", nil, `<font color="rgb(130, 100, 130)">[Adonis Chat]: </font><b>You are sending messages too fast! {string.format("(%g second(s) remaining)", Admin.SlowMode - (os.time() - slowCache[SenderPlayer]))}`)
+										server.Remote.Send(SenderPlayer, "Function", "DisplaySystemMessageInTextChat", nil, `<font color="rgb(130, 100, 130)">[PanAdmin Chat]: </font><b>You are sending messages too fast! {string.format("(%g second(s) remaining)", Admin.SlowMode - (os.time() - slowCache[SenderPlayer]))}`)
 									end
 									
 									return false
@@ -179,7 +179,7 @@ return function(Vargs, GetEnv)
 						end
 					end)
 					service.Events.MutedPlayerChat_UnFiltered:Connect(function(p, ...)
-						server.Remote.Send(p, "Function", "DisplaySystemMessageInTextChat", nil, `<font color="rgb(130, 100, 130)">[Adonis Chat]: </font><b>You are muted!</b> Other players cannot see your messages.`)
+						server.Remote.Send(p, "Function", "DisplaySystemMessageInTextChat", nil, `<font color="rgb(130, 100, 130)">[PanAdmin Chat]: </font><b>You are muted!</b> Other players cannot see your messages.`)
 					end)
 				end
 					
@@ -242,10 +242,10 @@ return function(Vargs, GetEnv)
 					end
 
 					if speakerPlayer and Admin.IsMuted(speakerPlayer) then
-						speaker:SendSystemMessage("[Adonis] :: You are muted!", channelName)
+						speaker:SendSystemMessage("[PanAdmin] :: You are muted!", channelName)
 						return true
 					elseif speakerPlayer and Admin.SlowMode and not Admin.CheckAdmin(speakerPlayer) and slowCache[speakerPlayer] and os.time() - slowCache[speakerPlayer] < Admin.SlowMode then
-						speaker:SendSystemMessage(string.format("[Adonis] :: Slow mode enabled! (%g second(s) remaining)", Admin.SlowMode - (os.time() - slowCache[speakerPlayer])), channelName)
+						speaker:SendSystemMessage(string.format("[PanAdmin] :: Slow mode enabled! (%g second(s) remaining)", Admin.SlowMode - (os.time() - slowCache[speakerPlayer])), channelName)
 						return true
 					end
 
@@ -991,7 +991,7 @@ return function(Vargs, GetEnv)
 						ran, ret = pcall(service.MarketPlace.PlayerOwnsAsset, service.MarketPlace, p, tonumber(pass))
 					end
 
-					if (ran and ret) or (pGroup and pGroup.Rank >= 10) then --// Complimentary donor access is given to Adonis contributors & developers.
+					if (ran and ret) or (pGroup and pGroup.Rank >= 10) then --// Complimentary donor access is given to PanAdmin contributors & developers.
 						Variables.CachedDonors[key] = os.time()
 						return true
 					end
@@ -1266,7 +1266,7 @@ return function(Vargs, GetEnv)
 
 				if container then
 					for _, v in container:GetChildren() do
-						if string.sub(v.Name, 1, 7) == "Adonis_" then
+						if string.sub(v.Name, 1, 7) == "PanAdmin_" then
 							v:Destroy()
 						end
 					end
@@ -1300,7 +1300,7 @@ return function(Vargs, GetEnv)
 						if command1 then
 							local command = Instance.new("TextChatCommand")
 
-							command.Name = "Adonis_"..name
+							command.Name = "PanAdmin_"..name
 							command.PrimaryAlias = command1
 							command.SecondaryAlias = command2 or ""
 							command.Parent = container

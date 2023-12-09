@@ -41,17 +41,17 @@ jobs:
          elif [ "$GITHUB_ACTION_EVENT_NAME" == "release" ] && [ "$GITHUB_IS_PRE_RELEASE" == "true" ]
           then
             BUILD_TYPE="DebugBeta"
-         elif [ "$GITHUB_ACTION_EVENT_NAME" == "pull_request" ] || [ "$GITHUB_REPO" != "Epix-Incorporated/Adonis" ]
+         elif [ "$GITHUB_ACTION_EVENT_NAME" == "pull_request" ] || [ "$GITHUB_REPO" != "Pancake-Incorporated/PanAdmin" ]
          then
            BUILD_TYPE="PRSnapshot"
          else
            BUILD_TYPE="Nightly"
          fi
-         echo "output_name=Adonis_${BUILD_TYPE}_${CUR_DATE_TIME}_$(git rev-parse --short "$GIT_HASH")" >> $GITHUB_OUTPUT
+         echo "output_name=PanAdmin_${BUILD_TYPE}_${CUR_DATE_TIME}_$(git rev-parse --short "$GIT_HASH")" >> $GITHUB_OUTPUT
 
       - uses: ok-nick/setup-aftman@v0.4.2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.TOKEN }}
 
       - name: Build
         run: rojo build -o ${{ steps.naming.outputs.output_name }}.rbxm .github/build.project.json
@@ -64,19 +64,19 @@ jobs:
     # The following commands are run for pushes only.
           
       - name: Build Nightly MainModule
-        if: github.repository == 'Epix-Incorporated/Adonis' && github.event_name == 'push' && github.ref_name == 'master'
+        if: github.repository == 'Pancake-Incorporated/PanAdmin' && github.event_name == 'push' && github.ref_name == 'master'
         run: rojo build -o module.rbxm .github/module.deploy.project.json
 
       - name: Send file nightly build to Discord channel
         uses: tsickert/discord-webhook@v5.3.0
-        if: github.repository == 'Epix-Incorporated/Adonis' && github.event_name == 'push' && github.ref_name == 'master'
+        if: github.repository == 'Pancake-Incorporated/PanAdmin' && github.event_name == 'push' && github.ref_name == 'master'
         with:
           webhook-url: ${{ secrets.NIGHTLY_WEBHOOK }}
           filename: ${{ steps.naming.outputs.output_name }}.rbxm
           
       - name: Publish Nightly MainModule
         uses: fjogeleit/http-request-action@v1.14.2
-        if: github.repository == 'Epix-Incorporated/Adonis' && github.event_name == 'push' && github.ref_name == 'master'
+        if: github.repository == 'Pancake-Incorporated/PanAdmin' && github.event_name == 'push' && github.ref_name == 'master'
         with:
           url: "${{ secrets.PUBURL2 }}/?assetId=${{ secrets.NIGHTLY_MODULE_ID }}"
           method: "POST"

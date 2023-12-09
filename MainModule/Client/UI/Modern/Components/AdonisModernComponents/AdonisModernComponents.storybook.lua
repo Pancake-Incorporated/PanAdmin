@@ -1,5 +1,5 @@
-local AdonisModernComponents = script.Parent
-local Packages = AdonisModernComponents.Parent.Packages
+local PanAdminModernComponents = script.Parent
+local Packages = PanAdminModernComponents.Parent.Packages
 
 local Roact = require(Packages.Roact)
 
@@ -66,7 +66,7 @@ local function ParseDocument(Document: string)
 end
 
 return {
-	name = 'Adonis Modern Theme',
+	name = 'PanAdmin Modern Theme',
 	roact = Roact,
 	storyRoots = {
 		script.Parent

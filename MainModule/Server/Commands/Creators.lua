@@ -154,7 +154,7 @@ return function(Vargs, env)
 			Prefix = "";
 			Commands = {":adonissettings", `{Settings.Prefix}settings`, `{Settings.Prefix}adonissettings`};
 			Args = {};
-			Description = "Opens the Adonis settings management interface";
+			Description = "Opens the PanAdmin settings management interface";
 			AdminLevel = "Creators";
 			Function = function(plr: Player, args: {string})
 				Remote.MakeGui(plr, "UserPanel", {Tab = "Settings"})

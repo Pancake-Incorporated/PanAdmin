@@ -1,9 +1,9 @@
 -------------------
--- Adonis Client --
+-- PanAdmin Client --
 -------------------
 --!nocheck
 																																																																																						  --[[
-This module is part of Adonis 1.0 and contains lots of old code;
+This module is part of PanAdmin 1.0 and contains lots of old code;
 future updates will generally only be made to fix bugs, typos or functionality-affecting problems.
 
 If you find bugs or similar issues, please submit an issue report to us!
@@ -118,10 +118,10 @@ local SERVICES_WE_USE = table.freeze({
 --// Logging
 local clientLog = {}
 local dumplog = function()
-	warn(":: Adonis :: Dumping client log...")
+	warn(":: PanAdmin :: Dumping client log...")
 
 	for _, v in clientLog do
-		warn(":: Adonis ::", v)
+		warn(":: PanAdmin ::", v)
 	end
 end
 local log = function(...)
@@ -169,7 +169,7 @@ end
 
 local oldPrint = print
 print = function(...)
-	oldPrint(":: Adonis ::", ...)
+	oldPrint(":: PanAdmin ::", ...)
 end
 
 --[[
@@ -339,7 +339,7 @@ client = setmetatable({
 			end)
 
 			if not ran or type(func) ~= "function" then
-				service.Players.LocalPlayer:Kick("Adonis (PlrClientIndexKlErr)")
+				service.Players.LocalPlayer:Kick("PanAdmin (PlrClientIndexKlErr)")
 				while true do
 				end
 			end
@@ -570,7 +570,7 @@ return service.NewProxy({
 						return self[ind]
 					end
 				end,
-				__metatable = if not data.DebugMode then "Adonis" else unique,
+				__metatable = if not data.DebugMode then "PanAdmin" else unique,
 			})
 		end
 
@@ -797,8 +797,8 @@ return service.NewProxy({
 		log("~! Return success")
 		return "SUCCESS"
 	end,
-	__metatable = if not Folder:FindFirstChild("ADONIS_DEBUGMODE_ENABLED") then "Adonis" else unique,
+	__metatable = if not Folder:FindFirstChild("ADONIS_DEBUGMODE_ENABLED") then "PanAdmin" else unique,
 	__tostring = function()
-		return "Adonis"
+		return "PanAdmin"
 	end,
 })

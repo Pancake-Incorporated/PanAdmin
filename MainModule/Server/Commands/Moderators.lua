@@ -663,12 +663,12 @@ return function(Vargs, env)
 				for _, v in service.GetPlayers(plr, args[1]) do
 					Routine(function()
 						if v.Character and v.Character:FindFirstChild("HumanoidRootPart") then
-							local ice = v.Character:FindFirstChild("Adonis_Ice")
+							local ice = v.Character:FindFirstChild("PanAdmin_Ice")
 							local plate
 							if ice then
 								plate = service.New("Part", {
 									Parent = v.Character;
-									Name = "Adonis_Water";
+									Name = "PanAdmin_Water";
 									Anchored = true;
 									CanCollide = false;
 									TopSurface = "Smooth";
@@ -1876,7 +1876,7 @@ return function(Vargs, env)
 				})
 
 				service.TeleportService:TeleportAsync(game.PlaceId, players, teleportOptions)
-				Functions.Message("Adonis", `Teleporting to server "{args[2]}"\nPlease wait...`, players, false, 10)
+				Functions.Message("PanAdmin", `Teleporting to server "{args[2]}"\nPlease wait...`, players, false, 10)
 			end
 		};
 
@@ -2320,10 +2320,10 @@ return function(Vargs, env)
 			Prefix = Settings.Prefix;
 			Commands = {"serverinstances"};
 			Args = {};
-			Description = "Shows all instances created server-side by Adonis";
+			Description = "Shows all instances created server-side by PanAdmin";
 			AdminLevel = "Moderators";
 			ListUpdater = function(plr: Player, updateArgs)
-				local objects = service.GetAdonisObjects()
+				local objects = service.GetPanAdminObjects()
 				local tab = table.create(#objects)
 				for _, v in objects do
 					table.insert(tab, {
@@ -2335,7 +2335,7 @@ return function(Vargs, env)
 			end;
 			Function = function(plr: Player, args: {string})
 				Remote.MakeGui(plr, "List", {
-					Title = "Adonis Instances";
+					Title = "PanAdmin Instances";
 					Table = Logs.ListUpdaters.ShowServerInstances(plr);
 					Stacking = false;
 					Update = "ShowServerInstances";
@@ -2347,7 +2347,7 @@ return function(Vargs, env)
 			Prefix = Settings.Prefix;
 			Commands = {"clientinstances"};
 			Args = {"player"};
-			Description = "Shows all instances created client-side by Adonis";
+			Description = "Shows all instances created client-side by PanAdmin";
 			AdminLevel = "Moderators";
 			ListUpdater = function(plr: Player, target: Player)
 				if target then
@@ -2357,7 +2357,7 @@ return function(Vargs, env)
 					end
 					return temp
 				else
-					local objects = service.GetAdonisObjects()
+					local objects = service.GetPanAdminObjects()
 					local temp = table.create(#objects)
 					for _, v in objects do
 						table.insert(temp, {
@@ -2385,7 +2385,7 @@ return function(Vargs, env)
 			Prefix = Settings.Prefix;
 			Commands = {"clearadonisguis", "clearguis", "clearmessages", "clearhints", "clrguis"};
 			Args = {"player", "delete all? (default: false)"};
-			Description = `Removes Adonis on-screen GUIs for the target player(s); if <delete all> is false, wil, only clear {Settings.Prefix}m, {Settings.Prefix}n, {Settings.Prefix}h, {Settings.Prefix}alert and screen effect GUIs`;
+			Description = `Removes PanAdmin on-screen GUIs for the target player(s); if <delete all> is false, wil, only clear {Settings.Prefix}m, {Settings.Prefix}n, {Settings.Prefix}h, {Settings.Prefix}alert and screen effect GUIs`;
 			AdminLevel = "Moderators";
 			Function = function(plr: Player, args: {string})
 				local deleteAll = args[2] and (args[2]:lower() == "true" or args[2]:lower() == "yes")
@@ -4299,7 +4299,7 @@ return function(Vargs, env)
 			Prefix = Settings.Prefix;
 			Commands = {"clearscreenguis", "clrscreenguis", "removeguis", "noguis"};
 			Args = {"player"};
-			Description = "Removes all of the target player(s)'s on-screen GUIs except Adonis GUIs";
+			Description = "Removes all of the target player(s)'s on-screen GUIs except PanAdmin GUIs";
 			AdminLevel = "Moderators";
 			Function = function(plr: Player, args: {string})
 				for _, v in service.GetPlayers(plr, args[1]) do
@@ -5433,7 +5433,7 @@ return function(Vargs, env)
 							local humanoidDesc: HumanoidDescription = humanoid:GetAppliedDescription():Clone()
 							local customAccessories = {}
 							for i,x in v.Character:GetChildren() do
-								if x.Name == "CustomAdonisAccessory" then
+								if x.Name == "CustomPanAdminAccessory" then
 									table.insert(customAccessories, x:GetAttribute("AssetId"))
 								end
 							end
@@ -5475,7 +5475,7 @@ return function(Vargs, env)
 						end
 
 						for i,x in v.Character:GetChildren() do
-							if x.Name == "CustomAdonisAccessory" then
+							if x.Name == "CustomPanAdminAccessory" then
 								x:Destroy()
 							end
 						end
@@ -5522,7 +5522,7 @@ return function(Vargs, env)
 
 							local customHats = 0
 							for _,x in v.Character:GetChildren() do
-								if x.Name == "CustomAdonisAccessory" then
+								if x.Name == "CustomPanAdminAccessory" then
 									customHats += 1
 								end
 							end

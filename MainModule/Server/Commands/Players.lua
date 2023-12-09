@@ -159,7 +159,7 @@ return function(Vargs, env)
 			Prefix = Settings.PlayerPrefix;
 			Commands = {"notifications", "comms", "nc"};
 			Args = {};
-			Description = "Opens the communications panel, showing you all the Adonis messages you have recieved in a timeline";
+			Description = "Opens the communications panel, showing you all the PanAdmin messages you have recieved in a timeline";
 			AdminLevel = "Players";
 			Function = function(plr: Player, args: {string})
 				Remote.MakeGui(plr, "CommsPanel")
@@ -317,7 +317,7 @@ return function(Vargs, env)
 			Prefix = Settings.PlayerPrefix;
 			Commands = {"donors", "donorlist", "donatorlist", "donators"};
 			Args = {"autoupdate? (default: true)"};
-			Description = "Shows a list of Adonis donators who are currently in the server";
+			Description = "Shows a list of PanAdmin donators who are currently in the server";
 			AdminLevel = "Players";
 			ListUpdater = function(plr: Player)
 				local tab = {}
@@ -498,7 +498,7 @@ return function(Vargs, env)
 			Prefix = Settings.PlayerPrefix;
 			Commands = {"credit", "credits"};
 			Args = {};
-			Description = "Shows you Adonis development credits";
+			Description = "Shows you PanAdmin development credits";
 			AdminLevel = "Players";
 			Function = function(plr: Player, args: {string})
 				Remote.MakeGui(plr, "Credits")
@@ -607,7 +607,7 @@ return function(Vargs, env)
 			Commands = {"theme", "usertheme"};
 			Args = {"theme name (leave blank to reset to default)"};
 			Hidden = true;
-			Description = "Changes the Adonis client UI theme";
+			Description = "Changes the PanAdmin client UI theme";
 			AdminLevel = "Players";
 			Function = function(plr: Player, args: {string})
 				local playerData = Core.GetPlayer(plr)
@@ -624,7 +624,7 @@ return function(Vargs, env)
 			Prefix = Settings.PlayerPrefix;
 			Commands = {"info", "about", "userpanel"};
 			Args = {};
-			Description = "Shows info about the admin system (Adonis)";
+			Description = "Shows info about the admin system (PanAdmin)";
 			AdminLevel = "Players";
 			Function = function(plr: Player, args: {string})
 				Remote.MakeGui(plr, "UserPanel", {Tab = "Info";})
@@ -1141,7 +1141,7 @@ return function(Vargs, env)
 				local connection; connection = service.MarketplaceService.PromptPurchaseFinished:Connect(function(_, boughtAssetId, isPurchased)
 					if boughtAssetId == assetId then
 						connection:Disconnect()
-						Functions.Notification("Adonis purchase", (isPurchased and string.format("Asset %d was purchased successfully!", assetId) or string.format("Asset %d was not bought", assetId)), {plr}, 10, "MatIcon://Shopping cart")
+						Functions.Notification("PanAdmin purchase", (isPurchased and string.format("Asset %d was purchased successfully!", assetId) or string.format("Asset %d was not bought", assetId)), {plr}, 10, "MatIcon://Shopping cart")
 					end
 				end)
 				service.MarketplaceService:PromptPurchase(plr, assetId, false)

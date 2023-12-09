@@ -77,7 +77,7 @@ return function(data, env)
 		end)
 	end)
 
-	out(string.format("Adonis Terminal [%s]", string.match(client.Changelog[5], "%[(.+)%].+")), termLines)
+	out(string.format("PanAdmin Terminal [%s]", string.match(client.Changelog[5], "%[(.+)%].+")), termLines)
 	
 	gTable = window.gTable
 	window:Ready()

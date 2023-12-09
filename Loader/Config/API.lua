@@ -1,3 +1,3 @@
 --[[
-	The Adonis API provides useful information on Adonis, its functions, and more.
+	The PanAdmin API provides useful information on PanAdmin, its functions, and more.
 --]]

@@ -11884,7 +11884,7 @@ Edited by: wally, ic3, Yarios]]></string>
 						<token name="SizeConstraint">0</token>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
-						<string name="Text">Adonis Edition</string>
+						<string name="Text">PanAdmin Edition</string>
 						<Color3 name="TextColor3">
 							<R>1</R>
 							<G>1</G>
@@ -12210,7 +12210,7 @@ Edited by: wally, ic3, Yarios]]></string>
 						<token name="SizeConstraint">0</token>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
-						<string name="Text">Adonis Edition</string>
+						<string name="Text">PanAdmin Edition</string>
 						<Color3 name="TextColor3">
 							<R>1</R>
 							<G>1</G>

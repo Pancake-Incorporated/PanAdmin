@@ -149,7 +149,7 @@ return function(Vargs, GetEnv)
 
 		ErrorMessage = function(Message, Trace, Script)
 			--service.FireEvent("ErrorMessage", Message, Trace, Script)
-			if Message and Message ~= "nil" and Message ~= "" and (string.find(Message,":: Adonis ::") or string.find(Message,script.Name) or Script == script) then
+			if Message and Message ~= "nil" and Message ~= "" and (string.find(Message,":: PanAdmin ::") or string.find(Message,script.Name) or Script == script) then
 				logError(`{Message} - {Trace}`)
 			end
 

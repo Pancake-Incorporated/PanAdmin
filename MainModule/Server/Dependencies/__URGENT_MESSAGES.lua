@@ -25,9 +25,9 @@ return {
 		"FULL DETAILS BELOW.";
 		"";
 		"=What Happened?=";
-		"A Roblox exploit (not Adonis) allowed users to change their usernames, allowing them to impersonate users.";
+		"A Roblox exploit (not PanAdmin) allowed users to change their usernames, allowing them to impersonate users.";
 		"This also allowed them to impersonate admins, such as the place owner.";
-		"Adonis, as well as all other scripts, would see the exploiter's Name property as their desired fake name.";
+		"PanAdmin, as well as all other scripts, would see the exploiter's Name property as their desired fake name.";
 		"I have been informed that this was patched at some point earlier today.";
 		"";
 		"=How Does This Affect You?=";
@@ -40,7 +40,7 @@ return {
 		"I apologize for any inconvience this may pose, and anything that was written in the settings module";
 		"in studio will be completely unaffected. SAVED PLAYER DATA WILL NOT BE AFFECTED. Any admins or settings";
 		"that were added/altered and saved in-game will be cleared/reset to prevent backdoor/abuse.";
-		"Again, the cause of this was entirely out of my control and was not caused by anything Adonis did.";
+		"Again, the cause of this was entirely out of my control and was not caused by anything PanAdmin did.";
 		"Personally, I'd prefer not to do this but the risk and severity is high enough to warrant it.";
 		"- Davey_Bones (Sceleratis)";
 		"[END_OF_MESSAGE 8.1.2020 18:38 EST]";

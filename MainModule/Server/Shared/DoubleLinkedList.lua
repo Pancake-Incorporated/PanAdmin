@@ -146,7 +146,7 @@ function LinkedList:Get(val : any)
 	local tinsert = table.insert
 	while curr and typeof(curr) == 'table' do 
 		if val then 
-            --// Pass a function and Adonis will pass through the current node into it
+            --// Pass a function and PanAdmin will pass through the current node into it
             --// Return true to add it to the "list"
             --// Final list will be returned after the call
             --// Passed value:
@@ -180,7 +180,7 @@ function LinkedList:GetAsTable(val : any)
 	local curr = self.snode 
 	local tinsert = table.insert
 	while curr and typeof(curr) == 'table' do 
-        --// Pass a function and Adonis will pass through the current node into it
+        --// Pass a function and PanAdmin will pass through the current node into it
         --// Return true to add it to the "list"
         --// Final list will be returned after the call
         --// Passed value:

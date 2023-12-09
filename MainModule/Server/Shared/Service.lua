@@ -405,7 +405,7 @@ return function(errorHandler, eventChecker, fenceSpecific, env)
 			end
 		end;
 		Wrapped = function(object)
-			if type(getmetatable(object)) == "table" and rawget(getmetatable(object), "__ADONIS_WRAPPED") or getmetatable(object) == "Adonis_Proxy" then
+			if type(getmetatable(object)) == "table" and rawget(getmetatable(object), "__ADONIS_WRAPPED") or getmetatable(object) == "PanAdmin_Proxy" then
 				return true
 			elseif (type(object) == "table" or typeof(object) == "userdata") and object.IsProxy and object:IsProxy() then
 				return true
@@ -541,7 +541,7 @@ return function(errorHandler, eventChecker, fenceSpecific, env)
 				--newMeta.__gc = function(tab)
 				--	custom:RemoveFromCache()
 				--end
-				newMeta.__metatable = if main.Core and main.Core.DebugMode then nil else "Adonis_Proxy"
+				newMeta.__metatable = if main.Core and main.Core.DebugMode then nil else "PanAdmin_Proxy"
 				newMeta.__ADONIS_WRAPPED = true
 				custom:AddToCache()
 				return newObj
@@ -702,7 +702,7 @@ return function(errorHandler, eventChecker, fenceSpecific, env)
 		NewProxy = function(meta)
 			local newProxy = newproxy(true)
 			local metatable = getmetatable(newProxy)
-			metatable.__metatable = if main.Core and main.Core.DebugMode then nil else "Adonis_Proxy"
+			metatable.__metatable = if main.Core and main.Core.DebugMode then nil else "PanAdmin_Proxy"
 			metatable.__ADONIS_WRAPPED = true
 			for i,v in meta do metatable[i] = v end
 			return newProxy
@@ -1373,7 +1373,7 @@ return function(errorHandler, eventChecker, fenceSpecific, env)
 			if not item:IsA("Accoutrement") then return reject() end
 			if not item:FindFirstChild("Handle") then return reject() end
 			if #item:GetDescendants() > 250 then return reject() end
-			item.Name = "CustomAdonisAccessory"
+			item.Name = "CustomPanAdminAccessory"
 			item:SetAttribute("AssetId", itemId)
 
 			-- No classes except those in whitelistedClasses are allowed
@@ -1417,8 +1417,8 @@ return function(errorHandler, eventChecker, fenceSpecific, env)
 			plr.Character.Humanoid:AddAccessory(item)
 		end,
 		GetPlayers = function() return service.Players:GetPlayers() end;
-		IsAdonisObject = function(obj) for i,v in CreatedItems do if v == obj then return true end end end;
-		GetAdonisObjects = function() return CreatedItems end;
+		IsPanAdminObject = function(obj) for i,v in CreatedItems do if v == obj then return true end end end;
+		GetPanAdminObjects = function() return CreatedItems end;
 	}
 
 	service = setmetatable({

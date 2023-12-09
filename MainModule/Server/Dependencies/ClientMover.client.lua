@@ -1,4 +1,4 @@
---// Adonis Client Loader (Non-ReplicatedFirst Version)
+--// PanAdmin Client Loader (Non-ReplicatedFirst Version)
 
 local DebugMode = false;
 
@@ -9,7 +9,7 @@ local xpcall = xpcall;
 local setfenv = setfenv;
 local tostring = tostring;
 
--- This stops all of the public Adonis bypasses. Though they would still be detected in time but it may be better to kick them before load??
+-- This stops all of the public PanAdmin bypasses. Though they would still be detected in time but it may be better to kick them before load??
 do
 	local game = game
 	local task_spawn, xpcall, require, task_wait
@@ -19,7 +19,7 @@ do
 	local triggered = false
 
 	local function loadingDetected(reason)
-		(localPlayer or Players.LocalPlayer):Kick(`:: Adonis Loader - Security ::\n{reason}`)
+		(localPlayer or Players.LocalPlayer):Kick(`:: PanAdmin Loader - Security ::\n{reason}`)
 		while true do end
 	end
 
@@ -232,7 +232,7 @@ if module and module:IsA("ModuleScript") then
 	print("Debug: Loading the client?")
 	local meta = require(module)
 	warn(`Got metatable: {meta}`)
-	if meta and type(meta) == "userdata" and tostring(meta) == "Adonis" then
+	if meta and type(meta) == "userdata" and tostring(meta) == "PanAdmin" then
 		local ran,ret = pcall(meta,{
 			Module = module,
 			Start = start,

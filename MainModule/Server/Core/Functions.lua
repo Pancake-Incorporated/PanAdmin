@@ -876,7 +876,7 @@ return function(Vargs, GetEnv)
 		Message = function(sender, title, message, image, players, scroll, duration)
 
 			-- Currently not used
-			if sender == 'Adonis' or sender == 'HelpSystem' or sender == 'Command' then
+			if sender == 'PanAdmin' or sender == 'HelpSystem' or sender == 'Command' then
 				sender = nil
 			end
 
@@ -1383,7 +1383,7 @@ return function(Vargs, GetEnv)
 		end;
 
 		Shutdown = function(reason)
-			Functions.Message('Adonis', Settings.SystemTitle, "The server is shutting down...", 'MatIcon://Warning', service.Players:GetPlayers(), false, 5)
+			Functions.Message('PanAdmin', Settings.SystemTitle, "The server is shutting down...", 'MatIcon://Warning', service.Players:GetPlayers(), false, 5)
 			task.wait(1)
 
 			service.Players.PlayerAdded:Connect(function(player)

@@ -17,7 +17,7 @@ jobs:
 
     - uses: ok-nick/setup-aftman@v0.4.2
       with:
-          token: ${{ SECRETS.GITHUB_TOKEN }}
+          token: ${{ SECRETS.TOKEN }}
 
     - name: Cache Roblox Standard Library
       id: cache-roblox-std

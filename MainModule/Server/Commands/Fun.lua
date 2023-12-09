@@ -153,7 +153,7 @@ return function(Vargs, env)
 				--// The model is free to take so feel free to that 👍
 				--// Here's the URL https://www.roblox.com/library/7679952474/AssetModule
 
-				warn("Requiring Assets Module by ID; Expand for module URL > ", {URL = "https://www.roblox.com/library/7679952474/Adonis-Assets-Module"})
+				warn("Requiring Assets Module by ID; Expand for module URL > ", {URL = "https://www.roblox.com/library/7679952474/PanAdminin-Assets-Module"})
 
 				local rAssets = require(7679952474) --// This apparently caches, so don't delete anything else future usage breaks
 				local gerald = rAssets.Gerald
@@ -955,7 +955,7 @@ return function(Vargs, env)
 				local plrLevel = data.PlayerData.Level
 
 				local audio = Instance.new("Sound")
-				audio.Name = "Adonis_Snap"
+				audio.Name = "PanAdmin_Snap"
 				audio.SoundId = "rbxassetid://2231214507"
 				audio.Looped = false
 				audio.Volume = 1
@@ -1991,10 +1991,10 @@ return function(Vargs, env)
 				assert(Settings.AgeRestrictedCommands, "This command is disabled due to age restrictions")
 				for i, v in service.GetPlayers(plr, args[1]) do
 					task.spawn(pcall, function()
-						if not v:IsA("Player") or not v or not v.Character or not v.Character:FindFirstChild("Head") or v.Character:FindFirstChild("Epix Puke") then return end
+						if not v:IsA("Player") or not v or not v.Character or not v.Character:FindFirstChild("Head") or v.Character:FindFirstChild("Pancake Puke") then return end
 						local run = true
 						local k = service.New("StringValue", v.Character)
-						k.Name = "Epix Puke"
+						k.Name = "Pancake Puke"
 						Routine(function()
 							repeat
 								task.wait(0.07)
@@ -2144,10 +2144,10 @@ return function(Vargs, env)
 				for _, v in service.GetPlayers(plr, args[1]) do
 					Routine(function()
 						local humanoid = v.Character:FindFirstChildOfClass("Humanoid")
-						if humanoid and not v.Character:FindFirstChild("Adonis_Poisoned") then
+						if humanoid and not v.Character:FindFirstChild("PanAdmin_Poisoned") then
 							local description, orgColors = humanoid:GetAppliedDescription(), {}
 							local poisoned = service.New("BoolValue", v.Character)
-							poisoned.Name = "Adonis_Poisoned"
+							poisoned.Name = "PanAdmin_Poisoned"
 							poisoned.Value = true
 
 							for k, v in desiredColors do
@@ -2693,7 +2693,7 @@ return function(Vargs, env)
 							torso["Right Hip"].C0 = CFrame.new(1.5, -1, 1.5) * ca1
 							torso["Left Hip"].C0 = CFrame.new(-1.5, -1, 1.5) * ca2
 							local st = service.New("Seat", {
-								Name = "Adonis_Torso",
+								Name = "PanAdmin_Torso",
 								TopSurface = 0,
 								BottomSurface = 0,
 								Size = Vector3.new(3, 1, 4),
@@ -3686,7 +3686,7 @@ return function(Vargs, env)
 					for _, charPart in char:GetChildren() do
 						if charPart:IsA("MeshPart") or charPart:IsA("Part") then
 							local defaultprops = PhysicalProperties.new(charPart.Material)
-							local density = defaultprops.Density / char:GetAttribute("Adonis_Resize") ^ 3
+							local density = defaultprops.Density / char:GetAttribute("PanAdmin_Resize") ^ 3
 
 							charPart.CustomPhysicalProperties = PhysicalProperties.new(density, defaultprops.Friction, defaultprops.Elasticity)
 						end
@@ -3702,11 +3702,11 @@ return function(Vargs, env)
 						continue
 					end
 
-					local resizeAttributeValue = char:GetAttribute("Adonis_Resize")
+					local resizeAttributeValue = char:GetAttribute("PanAdmin_Resize")
 					if not resizeAttributeValue then
-						char:SetAttribute("Adonis_Resize", num)
+						char:SetAttribute("PanAdmin_Resize", num)
 					elseif resizeAttributeValue * num < sizeLimit then
-						char:SetAttribute("Adonis_Resize", resizeAttributeValue * num)
+						char:SetAttribute("PanAdmin_Resize", resizeAttributeValue * num)
 					else
 						Functions.Hint(string.format("Cannot resize %s's character by %g%%: size limit exceeded.", service.FormatPlayer(v), num*100), {plr})
 						continue
@@ -3904,9 +3904,9 @@ return function(Vargs, env)
 							local att2 = service.New("Attachment", torso2)
 							local rope = service.New("RopeConstraint", torso1)
 
-							att1.Name = "Adonis_Rope_Attachment";
-							att2.Name = "Adonis_Rope_Attachment";
-							rope.Name = "Adonis_Rope_Constraint";
+							att1.Name = "PanAdmin_Rope_Attachment";
+							att2.Name = "PanAdmin_Rope_Attachment";
+							rope.Name = "PanAdmin_Rope_Constraint";
 
 							rope.Visible = true
 							rope.Attachment0 = att1
@@ -3930,7 +3930,7 @@ return function(Vargs, env)
 					local torso = p.Character:FindFirstChild("HumanoidRootPart")
 					if torso then
 						for i, v in torso:GetChildren() do
-							if v.Name == "Adonis_Rope_Attachment" or v.Name == "Adonis_Rope_Constraint" then
+							if v.Name == "PanAdmin_Rope_Attachment" or v.Name == "PanAdmin_Rope_Constraint" then
 								v:Destroy()
 							end
 						end
@@ -4147,7 +4147,7 @@ return function(Vargs, env)
 							local ice = service.New("Part", v.Character)
 							ice.BrickColor = BrickColor.new("Steel blue")
 							ice.Material = "Ice"
-							ice.Name = "Adonis_Ice"
+							ice.Name = "PanAdmin_Ice"
 							ice.Anchored = true
 							--ice.CanCollide = false
 							ice.TopSurface = "Smooth"

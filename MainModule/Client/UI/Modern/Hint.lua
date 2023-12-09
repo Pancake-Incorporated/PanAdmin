@@ -1,7 +1,7 @@
 client = nil
 service = nil
 
-local Components = script.Parent.Components.AdonisModernComponents
+local Components = script.Parent.Components.PanAdminModernComponents
 local Packages = Components.Parent.Packages
 
 local Maid = require(Packages.Maid)
@@ -47,7 +47,7 @@ return function(Data)
 
 	-- ////////// Perform Animation Tasks
 
-	local Handle = Roact.mount(App, service.UnWrap(service.PlayerGui), "AdonisUI.Hint")
+	local Handle = Roact.mount(App, service.UnWrap(service.PlayerGui), "PanAdminUI.Hint")
 
 	AppMaid.RemoveHandle = function()
 		Handle = Roact.unmount(Handle)

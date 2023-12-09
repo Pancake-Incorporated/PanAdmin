@@ -1,5 +1,5 @@
 --[[
-	Description: Searches the place for existing Adonis items and registers them.
+	Description: Searches the place for existing PanAdmin items and registers them.
 	Author: Sceleratis
 	Date: 4/3/2022
 --]]
@@ -15,7 +15,7 @@ return function(Vargs, GetEnv)
 	local Functions, Commands, Admin, Anti, Core, HTTP, Logs, Remote, Process, Variables, Deps =
 		server.Functions, server.Commands, server.Admin, server.Anti, server.Core, server.HTTP, server.Logs, server.Remote, server.Process, server.Variables, server.Deps
 
-	local OBJ_NAME_PREFIX = "Adonis_"
+	local OBJ_NAME_PREFIX = "PanAdmin_"
 
 	for _, child in ipairs(workspace:GetDescendants()) do
 		local objType, name = string.match(child.Name, `{OBJ_NAME_PREFIX}(.*): (.*)`)

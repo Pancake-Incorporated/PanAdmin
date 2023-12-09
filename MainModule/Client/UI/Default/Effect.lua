@@ -84,7 +84,7 @@ return function(data, env)
 		end
 
 		local blur = service.New("BlurEffect", {
-			Name = "Adonis_FadeOut_Blur";
+			Name = "PanAdmin_FadeOut_Blur";
 			Parent = service.Lighting;
 			Size = 0;
 		})

@@ -287,10 +287,10 @@ return function(Vargs, env)
 			Prefix = Settings.Prefix;
 			Commands = {"fullclear", "clearinstances", "fullclr"};
 			Args = {};
-			Description = "Removes any instance created server-side by Adonis; May break things";
+			Description = "Removes any instance created server-side by PanAdmin; May break things";
 			AdminLevel = "HeadAdmins";
 			Function = function(plr: Player, args: {string})
-				local objects = service.GetAdonisObjects()
+				local objects = service.GetPanAdminObjects()
 				for i, v in objects do
 					v:Destroy()
 				end

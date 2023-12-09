@@ -58,7 +58,7 @@ return function(data, env)
 	local gTable
 	local window = UI.Make("Window", {
 		Name  = "UserPanel";
-		Title = "Adonis";
+		Title = "PanAdmin";
 		Icon = "rbxassetid://7681261289"; --"rbxassetid://7681088830"; --"rbxassetid://7681233602"; --"rbxassetid://7681048299";
 		Size  = {465, 325};
 		AllowMultiple = false;
@@ -351,7 +351,7 @@ return function(data, env)
 		--// Help/Info
 		do
 			infoTab:Add("TextLabel", {
-				Text = "Adonis is a frequently updated, community maintained, open source administration system created by Sceleratis (Davey_Bones). \n\nIts purpose is to assist in the\nadministration and moderation\nof Roblox game servers.\n\nFeel free to take and edit it on\nthe condition that existing credits remain.\nHave an idea? Let us know!";
+				Text = "PanAdmin is a frequently updated, community maintained, open source administration system created by Sceleratis (Davey_Bones). \n\nIts purpose is to assist in the\nadministration and moderation\nof Roblox game servers.\n\nFeel free to take and edit it on\nthe condition that existing credits remain.\nHave an idea? Let us know!";
 				TextWrapped = true;
 				Size = UDim2.new(1, -145, 1, -10);
 				Position = UDim2.new(0, 5, 0, 5);
@@ -1311,7 +1311,7 @@ return function(data, env)
 				};
 				{
 					Text = "UI Keep Alive: ";
-					Desc = "- Prevents Adonis UI deletion on death";
+					Desc = "- Prevents PanAdmin UI deletion on death";
 					Entry = "Boolean";
 					Value = Variables.UIKeepAlive;
 					Function = function(enabled, toggle)
@@ -1324,7 +1324,7 @@ return function(data, env)
 				};
 				{
 					Text = "Particle Effects: ";
-					Desc = "- Enables/Disables Adonis made particles";
+					Desc = "- Enables/Disables PanAdmin made particles";
 					Entry = "Boolean";
 					Value = Variables.ParticlesEnabled;
 					Function = function(enabled, toggle)
@@ -1426,7 +1426,7 @@ return function(data, env)
 				};
 				{
 					Text = "Theme: ";
-					Desc = "- Allows you to set the Adonis UI theme";
+					Desc = "- Allows you to set the PanAdmin UI theme";
 					Entry = "DropDown";
 					Setting = "CustomTheme";
 					Value = Variables.CustomTheme or "Game Theme";

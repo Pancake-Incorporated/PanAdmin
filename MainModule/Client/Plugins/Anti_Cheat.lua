@@ -168,9 +168,9 @@ return function(Vargs)
 				hasActivated = true
 				Detected("crash", "Tamper Protection 0xC0FA6; "..tostring(message).."; ")
 				wait(1)
-				pcall(Disconnect, "Adonis_0xC0FA6")
-				pcall(Kill, "Adonis_0xC0FA6")
-				pcall(Kick, Player, "Adonis_0xC0FA6")
+				pcall(Disconnect, "PanAdmin_0xC0FA6")
+				pcall(Kill, "PanAdmin_0xC0FA6")
+				pcall(Kick, Player, "PanAdmin_0xC0FA6")
 			end
 
 			if isStudio then
@@ -603,9 +603,9 @@ return function(Vargs)
 				elseif type(Message) ~= "string" then
 					pcall(Detected, "crash", "Tamper Protection 0x600D")
 					task.wait(1)
-					pcall(Disconnect, "Adonis_0x600D")
-					pcall(Kill, "Adonis_0x600D")
-					pcall(Kick, Player, "Adonis_0x600D")
+					pcall(Disconnect, "PanAdmin_0x600D")
+					pcall(Kill, "PanAdmin_0x600D")
+					pcall(Kick, Player, "PanAdmin_0x600D")
 				elseif check(Message) then
 					Detected("crash", "Exploit detected; "..Message)
 				end
@@ -872,9 +872,9 @@ return function(Vargs)
 				then
 					opcall(Detected, "crash", "Tamper Protection 0x16471")
 					oWait(1)
-					opcall(Disconnect, "Adonis_0x16471")
-					opcall(Kill, "Adonis_0x16471")
-					opcall(Kick, Player, "Adonis_0x16471")
+					opcall(Disconnect, "PanAdmin_0x16471")
+					opcall(Kill, "PanAdmin_0x16471")
+					opcall(Kick, Player, "PanAdmin_0x16471")
 				end
 
 				if not isStudio then
@@ -900,9 +900,9 @@ return function(Vargs)
 				then
 					opcall(Detected, "crash", "Tamper Protection 0xE28D")
 					oWait(1)
-					opcall(Disconnect, "Adonis_0xE28D")
-					opcall(Kill, "Adonis_0xE28D")
-					opcall(Kick, Player, "Adonis_0xE28D")
+					opcall(Disconnect, "PanAdmin_0xE28D")
+					opcall(Kill, "PanAdmin_0xE28D")
+					opcall(Kick, Player, "PanAdmin_0xE28D")
 				end
 
 				task.wait(1)
@@ -911,9 +911,9 @@ return function(Vargs)
 		end, function()
 			opcall(Detected, "crash", "Tamper Protection 0x36C6")
 			oWait(1)
-			opcall(Disconnect, "Adonis_0x36C6")
-			opcall(Kill, "Adonis_0x36C6")
-			opcall(Kick, Player, "Adonis_0x36C6")
+			opcall(Disconnect, "PanAdmin_0x36C6")
+			opcall(Kill, "PanAdmin_0x36C6")
+			opcall(Kick, Player, "PanAdmin_0x36C6")
 		end)
 	end
 end

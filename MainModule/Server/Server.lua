@@ -1,9 +1,9 @@
 -------------------
--- Adonis Server --
+-- PanAdmin Server --
 -------------------
 --!nocheck
 																																																																																						  --[[
-This module is part of Adonis 1.0 and contains lots of old code;
+This module is part of PanAdmin 1.0 and contains lots of old code;
 future updates will generally only be made to fix bugs, typos or functionality-affecting problems.
 
 If you find bugs or similar issues, please submit an issue report
@@ -114,7 +114,7 @@ local logError = function(plr, err)
 	end
 
 	if server.Core and server.Core.DebugMode then
-		warn(`::Adonis:: Error: {plr}: {err}`)
+		warn(`::PanAdmin:: Error: {plr}: {err}`)
 	end
 
 	if server and server.Logs then
@@ -127,11 +127,11 @@ local logError = function(plr, err)
 end
 
 local print = function(...)
-	print(":: Adonis ::", ...)
+	print(":: PanAdmin ::", ...)
 end
 
 local warn = function(...)
-	warn(":: Adonis ::", ...)
+	warn(":: PanAdmin ::", ...)
 end
 
 local function CloneTable(tab, recursive)
@@ -240,7 +240,7 @@ local function LoadModule(module, yield, envVars, noEnv, isCore)
 	if server.Logs then
 		server.Logs.AddLog(server.Logs.Script,{
 			Text = `Loaded Module: {module}`;
-			Desc = "Adonis loaded a core module or plugin";
+			Desc = "PanAdmin loaded a core module or plugin";
 		})
 	end
 end
@@ -275,7 +275,7 @@ end;
 local function CleanUp()
 	--local env = getfenv(2)
 	--local ran,ret = pcall(function() return env.script:GetFullName() end)
-	print("Beginning Adonis cleanup & shutdown process...")
+	print("Beginning PanAdmin cleanup & shutdown process...")
 	--warn(`CleanUp called from {tostring((ran and ret) or "Unknown")}`)
 	--local loader = server.Core.ClientLoader
 	local data = service.UnWrap(server.Data)
@@ -288,7 +288,7 @@ local function CleanUp()
 		end
 	end
 
-	server.Model.Name = "Adonis_Loader"
+	server.Model.Name = "PanAdmin_Loader"
 	server.Model.Parent = service.ServerScriptService
 	server.Running = false
 
@@ -483,15 +483,15 @@ end
 --// Init
 return service.NewProxy({
 	__call = function(tab, data)
-		local mutex = service.RunService:FindFirstChild("__Adonis_MODULE_MUTEX")
+		local mutex = service.RunService:FindFirstChild("__PanAdmin_MODULE_MUTEX")
 		if mutex then
 			warn("\n-----------------------------------------------"
-				.."\nAdonis server-side is already running! Aborting..."
+				.."\nPanAdmin server-side is already running! Aborting..."
 				.."\n-----------------------------------------------")
 			script:Destroy()
 			return "FAILED"
 		else
-			mutex = service.New("StringValue", {Name = "__Adonis_MODULE_MUTEX", Archivable = false, Value = "Running"})
+			mutex = service.New("StringValue", {Name = "__PanAdmin_MODULE_MUTEX", Archivable = false, Value = "Running"})
 			local mutexBackup = mutex:Clone()
 			local function makePersistent(m)
 				local connection1, connection2 = nil, nil
@@ -499,16 +499,16 @@ return service.NewProxy({
 					if not m or m.Parent ~= service.RunService then
 						connection1:Disconnect()
 						connection2:Disconnect()
-						warn("Adonis module mutex removed; Regenerating...")
+						warn("PanAdmin module mutex removed; Regenerating...")
 						makePersistent(mutexBackup)
 						mutexBackup.Parent = service.RunService
 						mutexBackup = mutexBackup:Clone()
 					end
 				end)
 				connection2 = m:GetPropertyChangedSignal("Name"):Connect(function()
-					if m and m.Name ~= "__Adonis_MODULE_MUTEX" then
-						warn("Adonis module mutex renamed; Refreshing...")
-						m.Name = "__Adonis_MODULE_MUTEX"
+					if m and m.Name ~= "__PanAdmin_MODULE_MUTEX" then
+						warn("PanAdmin module mutex renamed; Refreshing...")
+						m.Name = "__PanAdmin_MODULE_MUTEX"
 					end
 				end)
 			end
@@ -524,15 +524,15 @@ return service.NewProxy({
 		end
 
 		if data and data.ModuleID == 8612978896 then
-			warn("Currently using Adonis Nightly MainModule; intended for testing & development only!")
+			warn("Currently using PanAdmin Nightly MainModule; intended for testing & development only!")
 		end
 
 		if data and data.DebugMode == true then
-			warn("Adonis was loaded with DebugMode enabled; This is intended for development use only, certain debug features intended for development use will be enabled, which can weaken Adonis's security in a production environment.")
-			local AdonisDebugEnabled = service.New("BoolValue")
-			AdonisDebugEnabled.Name = "ADONIS_DEBUGMODE_ENABLED"
-			AdonisDebugEnabled.Value = true
-			AdonisDebugEnabled.Parent = Folder.Parent.Client
+			warn("PanAdmin was loaded with DebugMode enabled; This is intended for development use only, certain debug features intended for development use will be enabled, which can weaken PanAdmin's security in a production environment.")
+			local PanAdminDebugEnabled = service.New("BoolValue")
+			PanAdminDebugEnabled.Name = "ADONIS_DEBUGMODE_ENABLED"
+			PanAdminDebugEnabled.Value = true
+			PanAdminDebugEnabled.Parent = Folder.Parent.Client
 		end
 		
 		setfenv(1, setmetatable({}, {__metatable = unique}))
@@ -624,7 +624,7 @@ return service.NewProxy({
 					end
 					return ""
 				end,
-				__metatable = if data.DebugMode then unique else "Adonis_MatIcons"
+				__metatable = if data.DebugMode then unique else "PanAdmin_MatIcons"
 			})
 		end
 
@@ -644,7 +644,7 @@ return service.NewProxy({
 
 		--// Server Specific Service Functions
 		ServiceSpecific.GetPlayers = server.Functions.GetPlayers
-		--// Experimental, may have issues with Adonis tables that are protected metatables
+		--// Experimental, may have issues with PanAdmin tables that are protected metatables
 		--ServiceSpecific.CloneTable = CloneTable
 
 		--// Initialize Cores
@@ -723,7 +723,7 @@ return service.NewProxy({
 		if server.Logs then
 			server.Logs.AddLog(server.Logs.Script, {
 				Text = "Finished Loading";
-				Desc = "Adonis has finished loading";
+				Desc = "PanAdmin has finished loading";
 			})
 		else
 			warn("SERVER.LOGS TABLE IS MISSING. THIS SHOULDN'T HAPPEN! SOMETHING WENT WRONG WHILE LOADING CORE MODULES(?)");
@@ -733,7 +733,7 @@ return service.NewProxy({
 		return "SUCCESS"
 	end;
 	__tostring = function()
-		return "Adonis"
+		return "PanAdmin"
 	end;
 	__metatable = nil; -- This is now set in __call if DebugMode isn't enabled.
 })

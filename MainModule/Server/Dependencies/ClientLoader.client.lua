@@ -1,4 +1,4 @@
---// ACLI - Adonis Client Loading Initializer
+--// ACLI - PanAdmin Client Loading Initializer
 if true then return end --// #DISABLED
 
 local DebugMode = false
@@ -122,7 +122,7 @@ end
 local function checkChild(child)
 	warn(`Checking child: child and child.ClassName} : {child and child:GetFullName()}`)
 	callCheck(child)
-	if child and not foundClient and not checkedChildren[child] and child:IsA("Folder") and child.Name == "Adonis_Client" then
+	if child and not foundClient and not checkedChildren[child] and child:IsA("Folder") and child.Name == "PanAdmin_Client" then
 		warn("Loading Folder...")
 		local nameVal
 		local origName
@@ -150,7 +150,7 @@ local function checkChild(child)
 		child.Parent = nil
 
 		warn("Destroying parent...")
-		if container and container:IsA("ScreenGui") and container.Name == "Adonis_Container" then
+		if container and container:IsA("ScreenGui") and container.Name == "PanAdmin_Container" then
 			spawn(function()
 				wait(0.5);
 				container:Destroy();
@@ -161,7 +161,7 @@ local function checkChild(child)
 			print("Debug: Loading the client?")
 			local meta = require(clientModule)
 			warn(`Got metatable: {meta}`)
-			if meta and type(meta) == "userdata" and tostring(meta) == "Adonis" then
+			if meta and type(meta) == "userdata" and tostring(meta) == "PanAdmin" then
 				local ran,ret = pcall(meta,{
 					Module = clientModule,
 					Start = start,
@@ -196,8 +196,8 @@ local function scan(folder)
 	warn("Scanning for client...")
 	if not doPcall(function()
 		for i,child in folder:GetChildren() do
-			if child.Name == "Adonis_Container" then
-				local client = child:FindFirstChildOfClass("Folder") or child:WaitForChild("Adonis_Client", 5);
+			if child.Name == "PanAdmin_Container" then
+				local client = child:FindFirstChildOfClass("Folder") or child:WaitForChild("PanAdmin_Client", 5);
 				if client then
 					doPcall(checkChild, client);
 				end
@@ -249,7 +249,7 @@ else
 
 	finderEvent = playerGui.ChildAdded:Connect(function(child)
 		warn("Child Added")
-		if not foundClient and child.Name == "Adonis_Container" then
+		if not foundClient and child.Name == "PanAdmin_Container" then
 			local client = child:FindFirstChildOfClass("Folder");
 			doPcall(checkChild, client);
 		end
@@ -275,7 +275,7 @@ else
 		warn("Loading took too long")
 		Kick(player, "\nACLI: [CLI-1162246] \nLoading Error [Took Too Long (>10 Minutes)]")
 	else
-		print("Debug: Adonis loaded?")
+		print("Debug: PanAdmin loaded?")
 		warn("Client found")
 		warn("Finished")
 		warn(time())

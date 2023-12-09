@@ -136,8 +136,8 @@ local descs = {};			--// Contains settings descriptions
 			MAKE SURE YOU SET settings.DataStoreKey TO ANYTHING RANDOM.
 																																																																									--]]
 
-settings.HideScript = true						 -- When the game starts the Adonis_Loader model will be hidden so other scripts cannot access the settings module; Disable if your game uses AssetService:SavePlaceAsync()
-settings.DataStore = "Adonis_1"					 -- DataStore the script will use for saving data; Changing this will lose any saved data
+settings.HideScript = true						 -- When the game starts the PanAdmin_Loader model will be hidden so other scripts cannot access the settings module; Disable if your game uses AssetService:SavePlaceAsync()
+settings.DataStore = "PanAdmin_1"					 -- DataStore the script will use for saving data; Changing this will lose any saved data
 settings.DataStoreKey = "CHANGE_THIS"			 -- CHANGE THIS TO ANYTHING RANDOM! Key used to encrypt all datastore entries; Changing this will lose any saved data
 settings.DataStoreEnabled = true				 -- Disable if you don't want to load settings and admins from the datastore; PlayerData will still save
 settings.LocalDatastore = false				 -- If this is turned on, a mock DataStore will forcibly be used instead and shall never save across servers
@@ -236,7 +236,7 @@ settings.BatchKey = "|"				-- :kill me | :ff bob | :explode scel
 settings.ConsoleKeyCode = "Quote"	-- Keybind to open the console; Rebindable per player in userpanel; KeyCodes: https://developer.roblox.com/en-us/api-reference/enum/KeyCode
 
 --// Easily add new custom commands below (without needing to create a plugin module)
---// You can also use this to overwrite existing commands if you know the command's index (found in the command's respective module within the Adonis MainModule)
+--// You can also use this to overwrite existing commands if you know the command's index (found in the command's respective module within the PanAdmin MainModule)
 settings.Commands = {
 	ExampleCommand1 = {								--// The index & table of the command
 		Prefix = Settings.Prefix;				--// The prefix the command will use, this is the ':' in ':ff me'
@@ -280,9 +280,9 @@ settings.CommandFeedback = false		-- Should players be notified when commands wi
 settings.CrossServerCommands = true		-- Are commands which affect more than one server enabled?
 settings.ChatCommands = true			-- If false you will not be able to run commands via the chat; Instead, you MUST use the console or you will be unable to run commands
 settings.CreatorPowers = true			-- Gives me creator-level admin; This is strictly used for debugging; I can't debug without full access to the script
-settings.CodeExecution = false			-- Enables the use of code execution in Adonis; Scripting related (such as :s) and a few other commands require this
+settings.CodeExecution = false			-- Enables the use of code execution in PanAdmin; Scripting related (such as :s) and a few other commands require this
 settings.SilentCommandDenials = false	-- If true, there will be no differences between the error messages shown when a user enters an invalid command and when they have insufficient permissions for the command
-settings.OverrideChatCallbacks = true		-- If the TextChatService ShouldDeliverCallbacks of all channels are overridden by Adonis on load. Required for slowmode. Mutes use a CanSend method to mute when this is set to false.
+settings.OverrideChatCallbacks = true		-- If the TextChatService ShouldDeliverCallbacks of all channels are overridden by PanAdmin on load. Required for slowmode. Mutes use a CanSend method to mute when this is set to false.
 
 settings.BanMessage = "Banned"				-- Message shown to banned users upon kick
 settings.LockMessage = "Not Whitelisted"	-- Message shown to people when they are kicked while the game is :slocked
@@ -304,7 +304,7 @@ settings.Console_AdminsOnly = false -- If true, only admins will be able to acce
 
 settings.HelpSystem = true		-- Allows players to call admins for help using !help
 settings.HelpButton = true		-- Shows a little help button in the bottom right corner.
-settings.HelpButtonImage = "rbxassetid://357249130" -- Sets the image used for the Adonis help button above.
+settings.HelpButtonImage = "rbxassetid://357249130" -- Sets the image used for the PanAdmin help button above.
 
 
 --------------------
@@ -333,8 +333,8 @@ settings.Trello_HideRanks = false		-- If true, Trello-assigned ranks won't be sh
 -- _G API SETTINGS --
 ---------------------
 
-settings.G_API = true					-- If true, allows other server scripts to access certain functions described in the API module through _G.Adonis
-settings.G_Access = false				-- If enabled, allows other scripts to access Adonis using _G.Adonis.Access; Scripts will still be able to do things like _G.Adonis.CheckAdmin(player)
+settings.G_API = true					-- If true, allows other server scripts to access certain functions described in the API module through _G.PanAdmin
+settings.G_Access = false				-- If enabled, allows other scripts to access PanAdmin using _G.PanAdmin.Access; Scripts will still be able to do things like _G.PanAdmin.CheckAdmin(player)
 settings.G_Access_Key = "Example_Key"	-- Key required to use the _G access API; Example_Key will not work for obvious reasons
 settings.G_Access_Perms = "Read" 		-- Access perms
 settings.Allowed_API_Calls = {
@@ -384,7 +384,7 @@ settings.ExploitGuiDetection = false 	-- (Default: false)	(Client-Sided) If any 
 
 --// Setting descriptions used for the in-game settings editor;
 
-descs.HideScript = [[ Disable if your game saves; When the game starts the Adonis_Loader model will be hidden so other scripts cannot access the settings module ]]
+descs.HideScript = [[ Disable if your game saves; When the game starts the PanAdmin_Loader model will be hidden so other scripts cannot access the settings module ]]
 descs.DataStore = [[ DataStore the script will use for saving data; Changing this will lose any saved data ]]
 descs.DataStoreKey = [[ Key used to encode all datastore entries; Changing this will lose any saved data ]]
 descs.DataStoreEnabled = [[ Disable if you don't want settings and admins to be saveable in-game; PlayerData will still save ]]
@@ -439,8 +439,8 @@ descs.Trello_AppKey = [[ Your Trello AppKey; ]]
 descs.Trello_Token = [[ Trello token (DON'T SHARE WITH ANYONE!) ]]
 descs.Trello_HideRanks = [[ If true, Trello-assigned ranks won't be shown in the admins list UI (accessed via :admins) ]]
 
-descs.G_API = [[ If true, allows other server scripts to access certain functions described in the API module through _G.Adonis ]]
-descs.G_Access = [[ If enabled, allows other scripts to access Adonis using _G.Adonis.Access; Scripts will still be able to do things like _G.Adonis.CheckAdmin(player) ]]
+descs.G_API = [[ If true, allows other server scripts to access certain functions described in the API module through _G.PanAdmin ]]
+descs.G_Access = [[ If enabled, allows other scripts to access PanAdmin using _G.PanAdmin.Access; Scripts will still be able to do things like _G.PanAdmin.CheckAdmin(player) ]]
 descs.G_Access_Key = [[ Key required to use the _G access API; Example_Key will not work for obvious reasons ]]
 descs.G_Access_Perms = [[ Access perms level ]]
 descs.Allowed_API_Calls = [[ Allowed calls ]]
@@ -452,7 +452,7 @@ descs.CommandFeedback = [[ Should players be notified when commands with non-obv
 descs.CrossServerCommands = [[ Are commands which affect more than one server enabled? ]]
 descs.ChatCommands = [[ If false you will not be able to run commands via the chat; Instead, you MUST use the console or you will be unable to run commands ]]
 descs.SilentCommandDenials = [[ If true, there will be no differences between the error messages shown when a user enters an invalid command and when they have insufficient permissions for the command ]]
-descs.OverrideChatCallbacks = [[ If the TextChatService ShouldDeliverCallbacks of all channels are overridden by Adonis on load. Required for muting ]]
+descs.OverrideChatCallbacks = [[ If the TextChatService ShouldDeliverCallbacks of all channels are overridden by PanAdmin on load. Required for muting ]]
 
 
 descs.BanMessage = [[ Message shown to banned users ]]
@@ -464,7 +464,7 @@ descs.MaxLogs = [[ Maximum logs to save before deleting the oldest; Too high can
 descs.SaveCommandLogs = [[ If command logs are saved to the datastores ]]
 descs.UseLinkedListsInLogs = [[ If true then log system uses a linked-list system to store logs instead of tables - severely improves server performance & allows for large logs with little to no impact except slightly increased memory usage ]]
 descs.Notification = [[ Whether or not to show the "You're an admin" and "Updated" notifications ]]
-descs.CodeExecution = [[ Enables the use of code execution in Adonis; Scripting related and a few other commands require this ]]
+descs.CodeExecution = [[ Enables the use of code execution in PanAdmin; Scripting related and a few other commands require this ]]
 descs.SongHint = [[ Display a hint with the current song name and ID when a song is played via :music ]]
 descs.TopBarShift = [[ By default hints and notifs will appear from the top edge of the window. Set this to true if you don't want hints/notifications to appear in that region. ]]
 
@@ -490,7 +490,7 @@ descs.HelpButtonImage = [[ Change this to change the help button's image ]]
 
 descs.AllowClientAntiExploit = [[ Enables client-sided anti-exploit functionality ]]
 descs.Detection = [[ (Extremely important, makes all protection systems work) A global toggle for all the other protection settings ]]
-descs.CheckClients = [[ (Important, makes sure Adonis clients are connected to the server) Checks clients every minute or two to make sure they are still active ]]
+descs.CheckClients = [[ (Important, makes sure PanAdmin clients are connected to the server) Checks clients every minute or two to make sure they are still active ]]
 
 descs.SongHint = [[ Display a hint with the current song name and ID when a song is played via :music ]]
 descs.TopBarShift = [[ By default hints and notifs will appear from the top edge of the window, this is achieved by offsetting them by -35 into the transparent region where Roblox buttons menu/chat/leaderstat buttons are. Set this to true if you don't want hints/notifications to appear in that region. ]]
@@ -513,7 +513,7 @@ descs.LocalCapes = [[ Makes Donor capes local instead of removing them ]]
 
 descs.HelpSystem = [[ Allows players to call admins for help using !help ]]
 descs.HelpButton = [[ Shows a little help button in the bottom right corner ]]
-descs.HelpButtonImage = [[ Sets the image used for the Adonis help button above. ]]
+descs.HelpButtonImage = [[ Sets the image used for the PanAdmin help button above. ]]
 
 descs.Detection = [[ Attempts to detect certain known exploits ]]
 descs.CheckClients = [[ Checks clients every minute or two to make sure they are still active ]]

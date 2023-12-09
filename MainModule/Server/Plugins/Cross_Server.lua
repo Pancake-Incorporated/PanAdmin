@@ -20,7 +20,7 @@ return function(Vargs, GetEnv)
 
 	local ServerId = game.JobId;
 	local MsgService = service.MessagingService;
-	local subKey = Core.DataStoreEncode("Adonis_CrossServerMessaging");
+	local subKey = Core.DataStoreEncode("PanAdmin_CrossServerMessaging");
 	local counter = 0;
 	local lastTick;
 

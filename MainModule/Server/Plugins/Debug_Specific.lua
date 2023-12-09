@@ -32,7 +32,7 @@ return function(Vargs, GetEnv)
 		Prefix = Settings.Prefix;
 		Commands = {"rebootadonis", "reloadadonis"};
 		Args = {};
-		Description = "Attempts to force Adonis to reload";
+		Description = "Attempts to force PanAdmin to reload";
 		AdminLevel = "Creators";
 		Function = function(plr: Player, args: {string}, data: {any})
 			local rebootHandler = server.Deps.RebootHandler:Clone();
@@ -62,7 +62,7 @@ return function(Vargs, GetEnv)
 		AdminLevel = "Players";
 		Function = function(plr: Player, args: {string})
 			local usage = {
-				"This instance of Adonis is in DebugMode";
+				"This instance of PanAdmin is in DebugMode";
 				"Meaning, you have access to various debug commands, as shown in the list below.";
 				"You can also run scripts thru the env in the command or devconsole with :debugadonisenvscript";
 				"or directly in game thru :debugloadstring"
@@ -122,11 +122,11 @@ return function(Vargs, GetEnv)
 		end
 	}
 
-	Commands.GetDebugAdonisEnvScript = {
+	Commands.GetDebugPanAdminEnvScript = {
 		Prefix = Settings.Prefix;
 		Commands = {"debugadonisenvscript"};
 		Args = {};
-		Description = "Provides a script in a notepad to you to copy and paste into the studio command bar or developer console to access the Adonis Env";
+		Description = "Provides a script in a notepad to you to copy and paste into the studio command bar or developer console to access the PanAdmin Env";
 		Hidden = true;
 		Debug = true;
 		NoFilter = true;
@@ -139,20 +139,20 @@ return function(Vargs, GetEnv)
 local IsRunningInSameScriptIdentity = false -- If you're running as a normal user-space script (aka the script identity is 2 when you use printidentity), you may toggle this to true, to prevent needing to wrap instances. This may prevent any minor incompatiblies caused by the wrapping logic, if any. This will not work in the command bar, run script button, or plugins.
 
 ----
-local DebugApiBindable = IsRunningInSameScriptIdentity and nil or game:GetService("ReplicatedStorage"):WaitForChild("Adonis_Debug_API", 15)
+local DebugApiBindable = IsRunningInSameScriptIdentity and nil or game:GetService("ReplicatedStorage"):WaitForChild("PanAdmin_Debug_API", 15)
 if not DebugApiBindable then
-	error("Adonis Debug API not found within 15 seconds! Is DebugMode enabled?")
+	error("PanAdmin Debug API not found within 15 seconds! Is DebugMode enabled?")
 end
 local DebugApi
 if IsRunningInSameScriptIdentity then
 	pcall(function()
-	   DebugApi = _G.Adonis.Debug
+	   DebugApi = _G.PanAdmin.Debug
 	end)
 	if not DebugApi then
-		warn("The IsRunningInSameScriptIdentity option is enabled, however _G.Adonis.Debug was unable to be accessed. Is DebugMode and the _G API enabled? Falling back to BindableEvent")
-		DebugApiBindable = game:GetService("ReplicatedStorage"):WaitForChild("Adonis_Debug_API", 15)
+		warn("The IsRunningInSameScriptIdentity option is enabled, however _G.PanAdmin.Debug was unable to be accessed. Is DebugMode and the _G API enabled? Falling back to BindableEvent")
+		DebugApiBindable = game:GetService("ReplicatedStorage"):WaitForChild("PanAdmin_Debug_API", 15)
 		if not DebugApiBindable then
-			error("Adonis Debug API not found within 15 seconds! Is DebugMode enabled?")
+			error("PanAdmin Debug API not found within 15 seconds! Is DebugMode enabled?")
 		end
 		DebugApi = DebugApiBindable:Invoke("GetApi")
 	end
@@ -160,7 +160,7 @@ else
 	DebugApi = DebugApiBindable:Invoke("GetApi") -- Calls the bindable and will wrap around a metatable to call it everytime you call a function outside this lua vm
 end
 -- We can't always directly call the API's functions in some places, namely different Lua VMs, such as the command bar. This allows the script run the functions.
-function WrapAdonisEnv(toWrap, chain)
+function WrapPanAdminEnv(toWrap, chain)
 	if chain == nil then
 		chain = ""
 	end
@@ -173,7 +173,7 @@ function WrapAdonisEnv(toWrap, chain)
 		if existingMeta == nil then
 			existingMeta = {}
 		elseif type(existingMeta) == "string" then
-			error(`The metatable ${chain} is locked, it provided the following message :${existingMeta}`) -- If you hit this, some code in Adonis likely needs to be updated to not lock metatables when DebugMode is on.
+			error(`The metatable ${chain} is locked, it provided the following message :${existingMeta}`) -- If you hit this, some code in PanAdmin likely needs to be updated to not lock metatables when DebugMode is on.
 		else
 			existingMetaClone = table.clone(existingMeta)
 		end
@@ -200,12 +200,12 @@ function WrapAdonisEnv(toWrap, chain)
 				if existingMeta.__index then
 					local result, resultPointer = DebugApiBindable:Invoke("RunEnvTableMetaFunc", tonumber(chain) and chain or chain:sub(1, #chain - 3), "__index", k)
 					if result then
-						return WrapAdonisEnv(result, resultPointer)
+						return WrapPanAdminEnv(result, resultPointer)
 					else
-						return WrapAdonisEnv(toWrap[k], curChain)
+						return WrapPanAdminEnv(toWrap[k], curChain)
 					end
 				else
-					return WrapAdonisEnv(toWrap[k], curChain)
+					return WrapPanAdminEnv(toWrap[k], curChain)
 				end
 			end
 		end
@@ -219,11 +219,11 @@ function WrapAdonisEnv(toWrap, chain)
 		return toWrap
 	end
 end
-local wrappedEnv = DebugApiBindable == nil and DebugApi.Env or WrapAdonisEnv(DebugApi.Env)
+local wrappedEnv = DebugApiBindable == nil and DebugApi.Env or WrapPanAdminEnv(DebugApi.Env)
 local server = wrappedEnv.Server
 local client = wrappedEnv.Client
 local service = wrappedEnv.Service
----- Your code with access to the Adonis Env below! Both server/client supported depending on which type of script your running				
+---- Your code with access to the PanAdmin Env below! Both server/client supported depending on which type of script your running				
 ]],
 				ReadOnly = true,
 				AutoSelectAll = true
@@ -368,7 +368,7 @@ local service = wrappedEnv.Service
 			--[[local ans = Remote.GetGui(plr, "YesNoPrompt", {
 				Icon = server.MatIcons.Warning;
 				Question = "Are you sure you want to load this script into the server env?";
-				Title = "Adonis DebugLoadstring";
+				Title = "PanAdmin DebugLoadstring";
 				Delay = 5;
 			}) As this is only available within DebugMode now, this has no real usecase. ]]
 			--if ans == "Yes" then

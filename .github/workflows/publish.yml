@@ -42,11 +42,11 @@ jobs:
          else
            exit 1
          fi
-         echo "output_name=Adonis_${BUILD_TYPE}_${CUR_DATE_TIME}_$(echo $GIT_REF | sed 's/\//=/')_$(git rev-parse --short "$GIT_HASH")" >> $GITHUB_OUTPUT
+         echo "output_name=PanAdmin_${BUILD_TYPE}_${CUR_DATE_TIME}_$(echo $GIT_REF | sed 's/\//=/')_$(git rev-parse --short "$GIT_HASH")" >> $GITHUB_OUTPUT
 
       - uses: ok-nick/setup-aftman@v0.4.2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.TOKEN }}
         
       - name: Set DebugMode off
         run: sed -i "s/DebugMode = true/DebugMode = false/g" Loader/Loader/Loader.server.lua 

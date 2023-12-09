@@ -929,7 +929,7 @@ return function(Vargs, env)
 				assert(string.find(bytecode, "\27Lua"), `Script unable to be created: {string.gsub(bytecode, "Loadstring%.LuaX:%d+:", "")}`)
 
 				local cl = Core.NewScript("Script", args[1], true)
-				cl.Name = "[Adonis] Script"
+				cl.Name = "[PanAdmin] Script"
 				cl.Parent = service.ServerScriptService
 				task.wait()
 				cl.Disabled = false
@@ -954,7 +954,7 @@ return function(Vargs, env)
 				assert(string.find(bytecode, "\27Lua"), `LocalScript unable to be created: {string.gsub(bytecode, "Loadstring%.LuaX:%d+:", "")}`)
 
 				local cl = Core.NewScript("LocalScript", `script.Parent = game:GetService('Players').LocalPlayer.PlayerScripts; {args[1]}`, true)
-				cl.Name = "[Adonis] LocalScript"
+				cl.Name = "[PanAdmin] LocalScript"
 				cl.Disabled = true
 				cl.Parent = plr:FindFirstChildOfClass("Backpack")
 				task.wait()
@@ -979,7 +979,7 @@ return function(Vargs, env)
 				local new = Core.NewScript("LocalScript", `script.Parent = game:GetService('Players').LocalPlayer.PlayerScripts; {args[2]}`, true)
 				for i, v in service.GetPlayers(plr, args[1]) do
 					local cl = new:Clone()
-					cl.Name = "[Adonis] LocalScript"
+					cl.Name = "[PanAdmin] LocalScript"
 					cl.Disabled = true
 					cl.Parent = v:FindFirstChildOfClass("Backpack")
 					task.wait()
@@ -1003,7 +1003,7 @@ return function(Vargs, env)
 				assert(string.find(bytecode, "\27Lua"), `LocalScript unable to be created: {string.gsub(bytecode, "Loadstring%.LuaX:%d+:", "")}`)
 
 				local new = Core.NewScript("LocalScript", args[1], true)
-				new.Name = "[Adonis] StarterScript"
+				new.Name = "[PanAdmin] StarterScript"
 				new.Parent = service.StarterGui
 				new.Disabled = false
 				Functions.Hint("Created starter script", {plr})
@@ -1395,7 +1395,7 @@ return function(Vargs, env)
 				for _, v in service.GetPlayers(plr, args[1]) do
 					Remote.Send(v, "Function", "SetCore", "SendNotification", {
 						Title = "Notification";
-						Text = args[3] or "Hello, from Adonis!";
+						Text = args[3] or "Hello, from PanAdmin!";
 						Duration = tonumber(args[2]) or 5;
 					})
 				end

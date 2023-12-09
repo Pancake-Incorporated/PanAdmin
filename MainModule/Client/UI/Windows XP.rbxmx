@@ -1807,8 +1807,8 @@ end
 --//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////--
 --//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////--
 
-	Window is a special UI object that can be used to easily make new Adonis UI windows.
-	Refer to modules in the Default theme for examples of how Adonis windows work.
+	Window is a special UI object that can be used to easily make new PanAdmin UI windows.
+	Refer to modules in the Default theme for examples of how PanAdmin windows work.
 
 	Window Data Table Properties: [Supplied when creating] [{Name = "Window", Size = {120,70}, Title = "Some Window"}]
 		[String] 	Name 		 - Name of the UI object being created [Used when finding duplicates or removing the window via client.UI.Remove()]

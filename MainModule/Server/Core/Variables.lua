@@ -51,7 +51,7 @@ return function(Vargs, GetEnv)
 		RunAfterInit = AfterInit,
 		ZaWarudo = false,
 		CodeName = math.random(),
-		IsStudio = service.RunService:IsStudio(), -- Used to check if Adonis is running inside Roblox Studio as things like TeleportService and DataStores (if API Access is disabled) do not work in Studio
+		IsStudio = service.RunService:IsStudio(), -- Used to check if PanAdmin is running inside Roblox Studio as things like TeleportService and DataStores (if API Access is disabled) do not work in Studio
 		AuthorizedToReply = {},
 		FrozenObjects = {},
 		ScriptBuilder = {},
